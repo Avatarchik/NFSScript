@@ -1,0 +1,2592 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace NFSScript.Memory
+{
+    /// <summary>
+    /// A class for Most Wanted functions.
+    /// </summary>
+    public static class MWFunctions
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FORCE_CAR_STOP = 0x0062CDD0;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int BECOME_AI_CAR = 0x0062AD90;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RESTART_RACE = 0x00630990;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RELOAD_HUD = 0x00630310;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_WORLD_GEOMETRY = 0x0062EFD0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RELOAD_GAME = 0x00630230;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_SMS = 0x00631580;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int ADD_SMS = 0x0062A6D0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_SCREEN_FLASH = 0x0062EAC0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_NUKE_SMACK = 0x0062E3F0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int BECOME_PLAYER_CAR = 0x0062AE00;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int DISP_INTRO_RACE = 0x0062BD00;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FADE_SCREEN_NO_LOADING_BAR_ON = 0x0062C760;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FADE_SCREEN_NO_LOADING_BAR_OFF = 0x0062C680;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_MESSAGE_SCREEN = 0x00631020;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int DESTROY_VEHILCE = 0x0062BB40;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int BECOME_PURSUIT_CAR = 0x0062AE70;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_VISUAL_LOOK = 0x0062EDB0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int KNOCKOUT_RACER = 0x0062D420;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SIMULATE = 0x006317B0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_LIGHTS = 0x00639E20;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_STOP_EFFECTS = 0x0062EBD0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int AUTO_SAVE = 0x0062AA20;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PROCESS_AREA_STIMULUS = 0x0062FB90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RESET_SEQUENCER = 0x00630620;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int TIRE_BLOWN = 0x00632000;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RESET_PLAYER_CAR = 0x00630510;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int GPS_LOST = 0x0062CED0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_BURNOUT = 0x00639260;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_FREEZE = 0x0062DFF0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int WORLD_MAP_ON = 0x00632370;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RACE_SHEET_ON = 0x0062FFE0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_TIME_EXTENSION = 0x006316D0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PLAY_RACE_MOVIE = 0x0062F970;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int DISABLE_PURSUIT_VEHICLE = 0x0062BBB0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_DETACH = 0x0062DD40;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int KILL_JOINT = 0x0062D320;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PLAY_END_NIS = 0x0062F480;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int ENABLE_TRIGGER = 0x0062C100;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_STEERING = 0x0063A4D0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int END_CAR_STOP = 0x0062C180;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int JOINT_DETACHED = 0x0062D260;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int JUMP_TO_STRATEGY_FLOW = 0x0062D2B0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_CAR_DAMAGE_RESET = 0x00639410;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int D_DAY_SPEECH = 0x0062B6B0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_ROAD_NOISE = 0x0062E9F0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int STOP_OBJECT_EFFECTS = 0x00631D90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int MOMENT_STRM = 0x0062D8A0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int EXIT_ENGAGABLE_TRIGGER = 0x0062C5D0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SET_PLAYER_CAR_RESET = 0x00630C10;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int CAMERA_PHOTO_FINISH = 0x0062B0A0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SPAWN_EXPLOSION = 0x006318C0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_COP_CAR_DOORS = 0x0062DB20;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_FAKE_FAR = 0x0062DEC0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_HIDE_CHARACTER = 0x0062E1F0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_MILESTONES = 0x006420F0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int GPS_FINISHED = 0x0062CEA0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_DETAIL = 0x0062DE10;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int ENABLE_COLLISION_ELEMENT = 0x0062BF80;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_COP_LIGHTS = 0x0062DC70;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_PIXELATE = 0x0062E610;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int E911_CALL = 0x0062A490;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int AUDIO_SMACKABLE_TEST = 0x0062A8A0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_BRAKELOCK = 0x00639090;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int HIDE_RACE_OVER_MESSAGE = 0x0062D100;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int DYNAMIC_REGION = 0x0062BDA0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RANDOM_EVENT_LIST = 0x00630030;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int GTRIGGER_INTERNAL = 0x006389F0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FORCE_PURSUIT_START = 0x0060AAC0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_REATTACH = 0x0062E920;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int BREAKER_STOP_COPS = 0x0062AF90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int REQUEST_EVENT_INFO_DIALOG = 0x00630460;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SPAWN_SMACKABLE = 0x0063B940;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FIRE_RANDOM_TRIGGER = 0x0062CB90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_TIME_OF_DAY = 0x0062ECB0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_CAR_SHAKE = 0x00639980;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int TUNE_VEHICLE = 0x00632120;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int ACCELERATE = 0x0062A520;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_RACE_OVER_MESSAGE = 0x006312A0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int TIRE_PUNCTURED = 0x00632040;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_CONSTRAINT = 0x00639B80;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int QUIT_DEMO_0 = 0x0063AE30;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int ENABLE_MODELING = 0x0062C030;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int STOP_OBJECT_EFFECT = 0x00631CC0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PURSUIT_BREAKER = 0x006417C0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RESET_SYSTEM = 0x00630690;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SET_SIM_RATE = 0x00630D90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_PLAY_EFFECT = 0x0062E6E0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PLAY_RACE_NIS = 0x00641520;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_RAIN = 0x0062E840;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int AI_ENGINE_REV = 0x00637BD0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PERFECT_LAUNCH = 0x0062F3A0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SND_GAME_STATE = 0x00631810;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PERFECT_SHIFT = 0x0062F3E0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int CINEMATIC_MOMENT = 0x0062B430;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int TRIGGER_MOMENT_NIS = 0x00632080;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SET_COP_AUTO_SPAWN_MODE = 0x00630B90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int AWARD_UPGRADE = 0x0062ABE0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int CHANGE_STATE = 0x0062B3F0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int CELL_CALL = 0x0062B2F0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int RESET_PROPS = 0x006305B0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_AERO_DYNAMICS = 0x0062DA50;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int WAKE_OBJECT = 0x00632270;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int ENABLE_AI_PHYSICS = 0x0062BF10;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_CAR_PITCH = 0x006395B0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FIRE_EVENT_LIST = 0x00638640;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int LOAD_LOST = 0x0062D740;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int TERMINATE_MUSIC = 0x00631EB0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int ENGINE_BLOWN = 0x0062C2A0;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int KILL_OBJECT = 0x0062D390;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PLAY_OBJECT_EFFECT = 0x0062F610;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SCHEDULE_EVENT_UPDATE = 0x00630A90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOCK_OBJECT = 0x00630E40;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int REPORT_INFRACTION = 0x00630400;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PROCESS_STIMULUS = 0x0062FD20;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_NITRO = 0x0063A230;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int HIDE_PART = 0x0062CF90;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int NIS_CAR_ROLL = 0x00639790;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int TIPS = 0x00631F50;
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PLAYER_AIRBORNE = 0x0062F560;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_RESULTS = 0x00642300;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int REQ_HELI_JOIN = 0x00708180;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FADE_SCREEN_ON = 0x62cb00;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FADE_SCREEN_OFF = 0x62c950;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int CAMERA_SHAKE = 0x62b110;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PURSUIT_BAIL = 0x62ace0;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_RACE_COUNTDOWN = 0x631190;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly byte[] DIALOG_BOX_SHOW_WARNING = {
+            0x56,                                                                                       // push   esi
+            0x57,                                                                                       // push   edi
+            0x68, 0x70, 0x74, 0x8C, 0x00,                                                               // push   0x8c7470
+            0x6A, 0xFF,                                                                                 // push   0xffffffff
+            0x6A, 0xFF,                                                                                 // push   0xffffffff
+            0x68, 0x01, 0x26, 0x7B, 0x41,                                                               // push   0x417b2601
+            0x6A, 0x01,                                                                                 // push   0x1
+            0x68, 0x78, 0x09, 0x89, 0x00,                                                               // push   0x890978
+            0x52,                                                                                       // push   edx
+            0xB8, 0x70, 0x89, 0x59, 0x00,                                                               // mov    eax,0x598970
+            0xFF, 0xD0,                                                                                 // call   eax
+            0x83, 0xC4, 0x1C,                                                                           // add    esp,0x1c
+            0x5F,                                                                                       // pop    edi
+            0x5E,                                                                                       // pop    esi
+            0xC3                                                                                        // ret
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static readonly byte[] DIALOG_BOX_SHOW_INFO = {
+            0x56,                                                                                       // push   esi
+            0x57,                                                                                       // push   edi
+            0x68, 0x70, 0x74, 0x8C, 0x00,                                                               // push   0x8c7470
+            0x6A, 0xFF,                                                                                 // push   0xffffffff
+            0x6A, 0xFF,                                                                                 // push   0xffffffff
+            0x68, 0x01, 0x26, 0x7B, 0x41,                                                               // push   0x417b2601
+            0x6A, 0x00,                                                                                 // push   0x0
+            0x68, 0x78, 0x09, 0x89, 0x00,                                                               // push   0x890978
+            0x52,                                                                                       // push   edx
+            0xB8, 0x70, 0x89, 0x59, 0x00,                                                               // mov    eax,0x598970
+            0xFF, 0xD0,                                                                                 // call   eax
+            0x83, 0xC4, 0x1C,                                                                           // add    esp,0x1c
+            0x5F,                                                                                       // pop    edi
+            0x5E,                                                                                       // pop    esi
+            0xC3                                                                                        // ret
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int LOADING_SCREEN_ON = 0x62D6F0;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int LOADING_SCREEN_OFF = 0x62D520;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_SCREEN_MESSAGE = 0x6121c9;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_DIALOG_BOX = 0x598970;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int UI_SHOW_RACE_COUTNDOWN = 0x631190;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int UNPAUSE = 0x632190;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int PAUSE = 0x0062F360;
+    }
+
+    /// <summary>
+    /// A class for Carbon functions.
+    /// </summary>
+    public static class CarbonFunctions
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CAMERA_SHAKE = 0x0066C240;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ACCELERATE = 0x66B6C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ADD_SMS = 0x0066B7C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AUTO_SAVE = 0x0066BB30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int BAIL_PURSUIT = 0x66BBF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int BECOME_AI_CAR = 0x0066BC80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int BECOME_PLAYER_CAR = 0x0066BCE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int BECOME_PURSUIT_CAR = 0x0066BF60;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int BREAKER_STOP_COPS = 0x0066C090;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CAMERA_KILL_ICE = 0x0066C140;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CAMERA_PHOTO_FINISH = 0x0066C1D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CELL_CALL = 0x0066C370;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CHANGE_WINGMAN_ROLE = 0x0066C610;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CINEMATIC_MOMENT = 0x0066C680;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DAMAGE_LIGHTS = 0x0066C860;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEBUG_PRINT = 0x0066C950;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEBUG_SCREEN_MESSAGE = 0x0066CA70;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DESTROY_VEHICLE = 0x0066CBC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DISABLE_PURSUIT_VEHICLE = 0x0066CC40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DISMISS_AIFROM_RACE = 0x0066CD30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DYNAMIC_REGION = 0x0066CED0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENABLE_COLLISION_GEOMETRY = 0x0066D010;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENABLE_MODELING = 0x0066D0A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int END_CAR_STOP = 0x0066D190;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_BIN = 0x0067BF00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int EXAMPLE_EVENT = 0x0066D570;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FIRE_EVENT_TAG = 0x0067C1C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_CAR_STOP = 0x0066DAA0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GTRIGGER_INTERNAL = 0x006842E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int HIDE_PART = 0x0066DCC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int HUD_FADE_TO_BLACK_OFF = 0x0066DE10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int HUD_FADE_TO_BLACK_ON = 0x0066DE90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ICE_CAR_ATTACH = 0x0066DF50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JUMP_TO_STRATEGY_FLOW = 0x0066E000;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int KILL_JOINT = 0x0066E090;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int KILL_OBJECT = 0x0066E110;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int LOAD_LOST = 0x0066E510;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int LOAD_MINIMAP_RESOURCES = 0x0066E5D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int MOMENT_STRM = 0x0066E6F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_AERO_DYNAMICS = 0x0066E800;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_BLOOM_SCALE = 0x0066E8B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_BRAKELOCK = 0x006849E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_BURNOUT = 0x00684B00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CAR_DAMAGE = 0x00684C10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CAR_DAMAGE_RESET = 0x00684D10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CAR_FULLY_ANIMATED = 0x00684E20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CAR_HIDE_PART = 0x0066EA80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CAR_PITCH = 0x00685000;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CAR_ROLL = 0x00685130;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CAR_SHAKE = 0x00685270;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_CONSTRAINT = 0x006853A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_COP_CAR_DOORS = 0x0066EC90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_COP_LIGHTS = 0x0066EDB0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_DETACH = 0x0066EE40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_DETAIL = 0x0066EF50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_FAKE_FAR = 0x0066EFE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_FREEZE = 0x0067CC00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_HIDE_CHARACTER = 0x0067CD40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_LIGHT_MATERIAL = 0x0066F210;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_LIGHT_RIGS = 0x0066F390;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_LIGHTS = 0x006855A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_MOTION_BLUR = 0x0066F4A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_NEUTRAL_REV = 0x00685700;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_NITRO = 0x00685840;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_NUKE_SMACK = 0x0066F630;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_OVERLAY_MESSAGE = 0x0066F770;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_PIXELATE = 0x0066F8C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_PLAY_EFFECT = 0x0066FAD0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_RAIN = 0x0066FBE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_REATTACH = 0x0066FC90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_RELEASE_CAR_CONTROL = 0x0066FD10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_ROAD_NOISE = 0x0066FDA0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_SCREEN_FLASH = 0x0066FE90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_SHOW_HUD = 0x0066FF40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_SPOT_LIGHT = 0x0066FFE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_START_COUNTDOWN = 0x00670070;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_STEERING = 0x00685A70;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_STOP_EFFECTS = 0x00670180;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_TIME_OF_DAY = 0x00670250;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_UCAP_BLEND = 0x00670340;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_UCAP_PAUSE = 0x00670420;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_UCAP_SELECT = 0x00670500;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_VISUAL_LOOK = 0x00670720;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_WORLD_ANIM_TRIGGER = 0x00670840;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS_WORLD_GEOMETRY = 0x006709A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY_END_NIS = 0x00670D20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY_OBJECT_EFFECT = 0x00670F00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY_RACE_MOVIE = 0x00671050;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY_RACE_NIS = 0x00693BC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PROCESS_AREA_STIMULUS = 0x00671170;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PROCESS_STIMULUS = 0x006713B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PUDDLE = 0x006714A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PULSE_WINGMAN_METER = 0x0067D880;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int REFRESH_HUD = 0x00671960;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RELOAD_HUD = 0x00671AC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_PLAYER_CAR = 0x00671C80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_PROPS = 0x00671D30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_SEQUENCER = 0x00671E50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_SYSTEM = 0x00671FC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ROLLING_CHECK = 0x006721A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_AI_AVOIDABLE = 0x00672270;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_AI_PLAYER_OFFSET = 0x00672310;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_COP_AUTO_SPAWN_MODE = 0x00672410;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_PLAYER_COLLISION_CACHE = 0x006724E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_WINGMAN_CHARGE_LEVEL = 0x00672590;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOCK_OBJECT = 0x00672610;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_CANYON_INSTRUCTION_FLASHERS = 0x00672680;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_MARKETING_SCREEN = 0x006727E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_MESSAGE_SCREEN = 0x006728A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_RACE_COUNTDOWN = 0x006729B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPAWN_EXPLOSION = 0x00673170;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPAWN_FRAGMENT = 0x006732E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPAWN_SMACKABLE = 0x00686CE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPAWN_WORLD_EXPLOSION = 0x00673470;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int STOP_OBJECT_EFFECT = 0x00673530;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int STOP_OBJECT_EFFECTS = 0x006735C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TERMINATE_MUSIC = 0x00673660;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TOGGLE_PUSH_BUTTON_OVERLAY = 0x00673800;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TOGGLE_WINGMAN_ACTIVATION_ALLOWED = 0x006738C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TRIGGER_MOMENT_DYNAMIC_NIS = 0x00673970;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TRIGGER_MOMENT_NIS = 0x00673A10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WINGMAN_TRIGGER = 0x00687AF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WORLD_MAP_ON = 0x00673FF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WORLD_MAP_ON_ACQUISITION = 0x006740B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WORLD_MAP_ON_ENCOUNTER = 0x006947D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WORLD_MAP_ON_IN_TRIGGER = 0x006949C0;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int SHOW_SCREEN_TEXT_MESSAGE = 0x65C090;
+        
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TABLE__RANDOMIZE = 0x00663F90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEBUG__EXECUTE_DEBUG_SCRIPT = 0x0064A800;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int LUA_DEBUG__EXECUTE_LINE = 0x0064A4F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ACTIVITY__RUN = 0x0064ADE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SUSPEND = 0x0064AE10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FREEZE_CAMERA = 0x650D70;
+
+
+        /// <summary>
+        /// MiniMap_AddEngagedRace(GRuntimeInstance *)
+        /// </summary>
+        public const int MINIMAP__ADD_ENGAGED_RACE = 0x64AFB0;
+
+
+        /// <summary>
+        /// Camera_SetGenericCamera(char const *,int)
+        /// </summary>
+        public const int CAMERA__SET_GENERIC_CAMERA = 0x650C50;
+
+
+        /// <summary>
+        /// Camera_SetSmoothExit(bool)
+        /// </summary>
+        public const int SET_SMOOTH_EXIT = 0x64AFA0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NIS__PLAY = 0x650DB0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WAIT_FOR_PIP = 0x650D50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int LAUNCH_PIP = 0x655670;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DISABLE_PIP = 0x650D40;
+
+
+        /// <summary>
+        /// HUD_ShowMessage(char const *)
+        /// </summary>
+        public const int HUD__SHOW_MESSAGE = 0x65B1B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_TIME_EXTENSION = 0x65B460;
+
+
+        /// <summary>
+        /// HUD_ShowLoopingMessage(char const *,float)
+        /// </summary>
+        public const int SHOW_LOOPING_MESSAGE = 0x65B2A0;
+
+
+        /// <summary>
+        /// Game_SabotageEngine(ISimable *,float)
+        /// </summary>
+        public const int GAME__SABOTAGE_ENGINE = 0x6515D0;
+
+
+        /// <summary>
+        /// Game_BlowEngine(ISimable *)
+        /// </summary>
+        public const int BLOW_ENGINE = 0x6515A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DETACH_CAMERA_FROM_RACER = 0x65B5E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CHALLENGE_COMPLETE = 0x6568B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CLEAR_AICONTROL = 0x65C330;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_AICONTROL = 0x65C2C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RACE_OVER_CAR_BEHAVIOUR = 0x65BA40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int INIT_RACERS = 0x668A10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WARP_PLAYER_TO_TRIGGER = 0x65DFF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WARP_PLAYER_AND_WINGMAN_TO_MARKER = 0x664E90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_PLAYER_START_POSITION = 0x65B800;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_RACER_GOAL = 0x65B8F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_RACER_LAPS_LEFT = 0x64B190;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int KNOCKOUT_RACER = 0x65B4E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TOTAL_RACER = 0x65B4E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_RACE_PLACEMENT = 0x6512E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_SPEED_TRAP_TRIGGERED = 0x655960;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_CHECKPOINT_REACHED = 0x65B9E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_LAP_FINISHED = 0x65E010;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_RACE_FINISHED = 0x660D20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_RACE_ACTIVITY = 0x64B4C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int START_RACE = 0x655F70;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int START_RACE_TIMERS = 0x65BC50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SAVE_START_POSITIONS = 0x64B480;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESTORE_START_POSITIONS = 0x651320;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY_FINISH_CAMERA = 0x6513A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_POST_RACE_FLOW = 0x65EF00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_ONLINE_POST_RACE_SCREEN = 0x64BBB0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_COPS_ENABLED = 0x6513E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NO_NEW_PURSUITS_OR_COPS = 0x651420;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_PURSUIT_START = 0x651430;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_ENGAGEABLE_TRIGGER = 0x64B560;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int EXIT_ENGAGABLE_TRIGGER = 0x65BDC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_GATE_ZONE = 0x65BE10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int EXIT_GATE_ZONE = 0x665910;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_RACE_OVER_SUMMARY = 0x65BF90;
+
+
+        /// <summary>
+        /// Game_SetTrafficSpeed(GRuntimeInstance *,float,float)
+        /// </summary>
+        public const int SET_TRAFFIC_SPEED = 0x6514E0;
+
+
+        /// <summary>
+        /// Game_SpawnCop(GRuntimeInstance *,char const *,bool,bool)
+        /// </summary>
+        public const int SPAWN_COP = 0x651180;
+
+
+        /// <summary>
+        /// Game_SpawnCharacter(GRuntimeInstance *,GRuntimeInstance *,GRuntimeInstance *,float)
+        /// </summary>
+        public const int SPAWN_CHARACTER = 0x64B120;
+
+
+        /// <summary>
+        /// Game_UnspawnCharacter(GRuntimeInstance *)
+        /// </summary>
+        public const int UNSPAWN_CHARACTER = 0x64B180;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SEND_CHARACTER_STIMULUS = 0x6511F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JACK_KNIFE = 0x651480;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_ALL_STAGING = 0x656430;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_PAUSE_MENU = 0x64B620;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AWARD_CASH = 0x65C000;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AWARD_POINTS = 0x6565B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CHALLENGE_COMPLETED = 0x651550;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int UNLOCK_RACE = 0x65C010;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_COUNTDOWN_DONE = 0x6567B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_COPS_FOR_RESTART = 0x651580;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_TRIGGER_ICON = 0x64B100;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int HIDE_TRIGGER_ICON = 0x64B110;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WARP_TO_MARKER_WHEN_ROAMING = 0x64BF80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_SPECIAL_FINALIZATION = 0x64BE50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ALLOW_ENGAGE_EVENTS = 0x64BB20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ALLOW_MENU_GATES = 0x64BB30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ALLOW_ENGAGE_SAFEHOUSE = 0x64BB40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_SPECIAL_SETUP = 0x64BDF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JUMP_TO_CAR_LOT = 0x64B7A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ABANDON_RACE = 0x656300;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JUMP_TO_SAFE_HOUSE = 0x64B800;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JUMP_TO_NEW_WING_MAN = 0x64B850;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_GPS = 0x64B8A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NAVIGATE_PLAYER_TO = 0x64B8C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_ACTIVITY_FINISHED = 0x651690;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CAREER_POST_RACE_FLOW = 0x64B1F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RACE_DONE = 0x656970;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_CHANCE_OF_RAIN = 0x64B9D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY_TUTORIAL = 0x65C3A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_SAFE_HOUSE_INTRO = 0x64BA50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_ZONE_MENU_ACTION = 0x65BE90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_CURRENT_TIME_OF_DAY = 0x64BD40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RELOAD_WORLD = 0x64BDA0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_WORLD_HEAT = 0x65C550;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_WINNING_POST_RACE_SCREEN = 0x65E270;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_LOSING_POST_RACE_SCREEN = 0x65E240;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_ACQUISITION_SCREEN = 0x64BC50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PREVENT_PLAYER_BEING_BUSTED = 0x6516D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CALCULATE_RANKING = 0x64BE70;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_STEER = 0x65C730;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_GAS = 0x65C770;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_BRAKE = 0x65C7B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_HAND_BRAKE = 0x65C7F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_NOS = 0x65C830;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_GET_SPEED = 0x65C880;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_WON = 0x64BFA0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_VEHICLE_ON_GROUND = 0x6516F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ACTIVATE_DRIFT_MODE = 0x65C8B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEACTIVATE_DRIFT_MODE = 0x65C910;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DRIFT_SECTION_ENTERED = 0x64C000;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DRIFT_SECTION_ENTRY_ENDED = 0x64C020;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DRIFT_SECTION_EXITED = 0x64C040;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DRIFT_FINALIZE_SCORE = 0x64C060;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DRIFT_RESET_SCORE = 0x64C080;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int USE_SECTIONS_IN_DRIFT = 0x64BFE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_MAX_SCORE_FOR_SECTION = 0x64C0A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PRECALCULATE_DRIFT_OPPONENT_SCORES = 0x64C0C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_WAS_TOO_SLOW_IN_DRIFT_RACE = 0x64C2B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_WENT_OVERBOARD_IN_DRIFT_RACE = 0x64C2D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_WENT_OVERBOARD_IN_CHECK_POINT_RACE = 0x64C330;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAYER_WENT_OVERBOARD_IN_CANYON_DUEL = 0x64C2F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ACTIVATE_DRIFT_CAMERA = 0x64C0E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_AIGOAL = 0x651750;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GET_WINGMAN = 0x6517E0;
+
+
+        /// <summary>
+        /// Game_SetPursuitTarget(ISimable *,ISimable *)
+        /// </summary>
+        public const int SET_PURSUIT_TARGET = 0x6517A0;
+
+
+        /// <summary>
+        /// Game_SetPursuitOffset(ISimable *,float,float)
+        /// </summary>
+        public const int SET_PURSUIT_OFFSET = 0x651810;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TIME_PLAYER_FACING_WRONG_WAY = 0x65C970;
+
+
+        /// <summary>
+        /// Game_TriggerCrewIndication(int, char const *, char const *)
+        /// </summary>
+        public const int TRIGGER_CREW_INDICATION = 0x65C9A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FINALIZE_SCORES = 0x64C140;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CANYON_RACE_CLEAR = 0x64C170;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CANYON_RACE_SETUP = 0x656980;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CANYON_RACE_UPDATE = 0x64C1D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CANYON_RACE_STATE = 0x64C1F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int KNOCKOUT_RACE_SETUP = 0x64C190;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int KNOCKOUT_RACE_UPDATE = 0x64C1B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GET_STORY_LINE_PROGRESSION = 0x64C380;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ADDVANCE_STORY_LINE_PROGRESSION = 0x64C390;
+
+
+        /// <summary>
+        /// Game_StartRaceFromInGame(char const *)
+        /// </summary>
+        public const int START_RACE_FROM_IN_GAME = 0x64C3B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_STORY_RACE_FLAG = 0x64C4A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GET_OVER_ALL_WON_ATTACK_RACES = 0x64C3F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GET_WON_ATTACK_RACESIN_AREA = 0x64C3D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int QUIT_TO_CAR_CLASS_SELECT_SCREEN = 0x64C450;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int QUIT_TO_LOGO_SCREEN = 0x64C400;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SKIP_CAREER_INTRO = 0x64C560;
+
+
+        /// <summary>
+        /// Game_SetCareerEventContext(int)
+        /// </summary>
+        public const int SET_CAREER_EVENT_CONTEXT = 0x64C570;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SETUP_CREW_TUTORIAL = 0x65CAF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DISMISS_TUTORIAL_AI = 0x656C30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FINISH_TUTORIAL = 0x65CBC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_DRAFTING = 0x651C30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_POST_BOSS_FLOW = 0x656C80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FINISH_CREW_DEFECTION_FLOW = 0x667DF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOULD_DO_SPECIAL_DEFECTION_FLOW = 0x64C5B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int UNLOCK_NIKKI = 0x667FF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int UPATE_BOSS_STATE = 0x64C600;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CREATE_DEFECTOR_CAR = 0x65E280;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLACE_CREW_VEHICLE = 0x651DC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int IS_CREW_VEHICLE_LOADED = 0x651FB0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_FREE_ROAM_START_MARKER = 0x64C590;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int YOU_WON = 0x64C670;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_RACE_EXPIRED = 0x652000;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int MUSIC__REQUEST_TRANSITION = 0x652080;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_CANYON_MUSIC = 0x0064C770;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_PURSUIT_MUSIC = 0x0064C7A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_LICENSED_MUSIC = 0x0064C7D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_CREW_MUSIC = 0x0064C740;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_KILL_MUSIC = 0x0064C800;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPEECH__RACE_OVER = 0x65CC80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RENDER__ENABLE_CRASH_VISUAL_TREATMENT = 0x64CA00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CAMERA__ACTIVATE_DEFECTOR_CAMERA = 0x65CD50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GAME__PLAYER_HUD_EXIST = 0x6522F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ACTIVATE_DEFAULT_CAMERA_OVERRIDE = 0x0064C830;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEACTIVATE_DEFAULT_CAMERA_OVERRIDE = 0x64C960;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ALLOW_FINISH_LINE = 0x64B0A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SETUP_CREW_DEFECTION_TRIGGER = 0x651D50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CLEAR_CAREER_VEHICLE = 0x64CA20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPAWN_ICONS = 0x652330;
+
+
+        /// <summary>
+        /// Racer_ForceCoast(int)
+        /// </summary>
+        public const int RACER__FORCE_COAST = 0x64CA30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int END_FORCE_STOP = 0x64CA50;
+
+
+        /// <summary>
+        /// Game_HideLoadingScreen(int)
+        /// </summary>
+        public const int GAME__HIDE_LOADING_SCREEN = 0x64CA70;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENABLE_TRIGGER = 0x64C5D0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GAME__SET_TIMER = 0x64A8C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int GAME__KILL_TIMER = 0x64A8E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DIALOG_BOX__GENERATE = 0x5CDEA0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DIALOG_BOX__OK = 0x5CF440;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DIALOG_BOX__OKCANCEL = 0x5CF460;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DIALOG_BOX__YES_NO = 0x5CF4B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DIALOG_BOX__CANCEL = 0x5CF490;
+
+
+    }
+
+    /// <summary>
+    /// A class for functions related functions.
+    /// </summary>
+    public static class Function
+    {
+        static Dictionary<IntPtr, string> memoryStringPointers = new Dictionary<IntPtr, string>();
+        /// <summary>
+        /// Call a <see cref="Function"/> address.
+        /// </summary>
+        /// <param name="address">The address to call.</param>
+        /// <param name="o">The parameters to pass to the function.</param>
+        public static void Call(int address, params object[] o)
+        {
+            Call(address, true, o);            
+        }
+
+        /// <summary>
+        /// Call a <see cref="Function"/> address.
+        /// </summary>
+        /// <param name="address">The address to call.</param>
+        /// <param name="o">The parameters to pass to the function.</param>
+        /// <param name="align">Whether to align the stack or not.</param>
+        public static void Call(int address, bool align, params object[] o)
+        {
+            ASMBuilder function = new ASMBuilder();
+
+            // Push parameters to the stack
+            for (int i = 0; i < o.Length; i++)
+            {
+                if (o[i] is byte)
+                {
+                    function.Push((int)o[i]);
+                    //Log.Print("TEST", string.Format("Pushing byte {0} to the stack", (byte)o[i]));
+                }
+                else if (o[i] is int)
+                {
+                    function.Push((int)o[i]);
+                    //Log.Print("TEST", string.Format("Pushing int {0} to the stack", (int)o[i]));
+                }
+                else if (o[i] is float)
+                {
+                    function.Push((float)o[i]);
+                    //Log.Print("TEST", string.Format("Pushing float {0} to the stack", (float)o[i]));
+                }
+                else if (o[i] is string)
+                {
+                    string s = (string)o[i];
+
+                    IntPtr addr = IntPtr.Zero;
+                    IntPtr handle = GameMemory.memory.ProcessHandle;
+                    if (memoryStringPointers.ContainsValue(s))
+                    {
+                        addr = memoryStringPointers.FirstOrDefault(x => x.Value == s).Key;
+                    }
+                    else
+                    {
+                        addr = _ASM.VirtualAllocEx(handle, IntPtr.Zero, (uint)s.Length + 4, AllocationType.Commit, MemoryProtection.ExecuteReadWrite);
+
+                        if (addr == IntPtr.Zero)
+                        {
+                            Log.Print("ERROR", "Failed to allocate memory!");
+                            return;
+                        }
+
+                        UIntPtr bytesWritten = UIntPtr.Zero;
+
+                        if (!_ASM.WriteProcessMemory(handle, addr, Encoding.ASCII.GetBytes(s), (uint)s.Length + 4, out bytesWritten))
+                        {
+                            Log.Print("ERROR", "Could not write process memory!");
+                            return;
+                        }
+                        else memoryStringPointers.Add(addr, s);
+
+                        if (s.Length + 4 != (int)bytesWritten)
+                        {
+                            Log.Print("ERROR", "String length is not equal to the amount of bytes written.");
+                        }
+
+                    }
+
+                    function.Push(addr.ToInt32());
+
+                }
+                else if (o[i] is Locval)
+                {
+                    Locval val = (Locval)o[i];
+                    int value = val.value;
+                    function.PushWORDPTRDS(value);
+
+                    //Log.Print("TEST", string.Format("Pushing the value of [0x{0}] to the stack", value.ToString("X")));
+                }
+                else if (o[i] is uint)
+                {
+                    function.Push((uint)o[i]);
+                    //Log.Print("TEST", string.Format("Pushing uint {0} to the stack", (uint)o[i]));
+                }
+                else function.Push((int)o[i]);
+            }
+
+            function.MovEAX(address);
+            function.CallEAX();
+
+            if (align)
+            {
+                // For stack alignment to prevent crashes
+                for (int i = 0; i < o.Length; i++)
+                {
+                    function.PopEAX();
+                }
+            }
+            // Return
+            function.Return();
+
+            ASM.CallAssembly(function.ToArray());
+        }
+    }
+}

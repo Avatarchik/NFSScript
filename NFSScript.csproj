@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55A95250-696D-4C73-8E96-593D211A5974}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NFSScript</RootNamespace>
+    <AssemblyName>NFSScript</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\NFSScript.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\NFSScript.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseCamera.cs" />
+    <Compile Include="Carbon\Camera.cs" />
+    <Compile Include="Carbon\Cars.cs" />
+    <Compile Include="Carbon\DynamicGameObject.cs" />
+    <Compile Include="Carbon\Game.cs" />
+    <Compile Include="Carbon\Player.cs" />
+    <Compile Include="Carbon\SkipFEValues.cs" />
+    <Compile Include="Carbon\UI.cs" />
+    <Compile Include="Carbon\VinylCodes.cs" />
+    <Compile Include="DirectX.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="INIReader.cs" />
+    <Compile Include="Math\Point.cs" />
+    <Compile Include="Math\Quaternion.cs" />
+    <Compile Include="Memory\Functions.cs" />
+    <Compile Include="Time.cs" />
+    <Compile Include="Types\Locval.cs" />
+    <Compile Include="Memory\_ASM.cs" />
+    <Compile Include="MW\Game.cs" />
+    <Compile Include="Color.cs" />
+    <Compile Include="Color32.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Math\MathFunctions.cs" />
+    <Compile Include="Math\Vector3.cs" />
+    <Compile Include="Memory\Addresses.cs" />
+    <Compile Include="Memory\GameMemory.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="MW\Network.cs" />
+    <Compile Include="MW\Player.cs" />
+    <Compile Include="MW\SkipFEValues.cs" />
+    <Compile Include="MW\UI.cs" />
+    <Compile Include="NFSScript.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Memory\VAMemory.cs" />
+    <Compile Include="ProStreet\Game.cs" />
+    <Compile Include="ProStreet\Language.cs" />
+    <Compile Include="ProStreet\Player.cs" />
+    <Compile Include="ProStreet\UI.cs" />
+    <Compile Include="Undercover\Game.cs" />
+    <Compile Include="Undercover\Language.cs" />
+    <Compile Include="Undercover\Player.cs" />
+    <Compile Include="Undercover\SecretCodes.cs" />
+    <Compile Include="Undercover\UI.cs" />
+    <Compile Include="Underground2\Game.cs" />
+    <Compile Include="Underground2\Player.cs" />
+    <Compile Include="Underground2\UI.cs" />
+    <Compile Include="Underground\Game.cs" />
+    <Compile Include="Underground\Input.cs" />
+    <Compile Include="Underground\Network.cs" />
+    <Compile Include="Underground\Player.cs" />
+    <Compile Include="Underground\UI.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
