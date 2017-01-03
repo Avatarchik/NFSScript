@@ -10,7 +10,7 @@ using NFSScript.Math;
 namespace NFSScript.Carbon
 {
     /// <summary>
-    /// A camera class.
+    /// A camera class which isn't fully functional. So please wait for a future update till you can use this!
     /// </summary>
     public class Camera : BaseCamera
     {
