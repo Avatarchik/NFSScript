@@ -8,5 +8,8 @@ If you are planning to write mods and contribute, you should check the [Getting 
 # Download
 Downloads of this tool can be found on the [releases](https://github.com/DennisStanistan/NFSScript/releases) page.
 
-# Credits
-I would like to thank Xan1242, 379Felipe & nlgzrgn for helping me with this project. Without them it would be a complete nightmare to work on this project.
+# Credits & Special Thanks
+Xan1242 - Provided me with a HUGE list of function addresses.
+nlgzrgn - Sent me useful variables.
+
+Also thanks to: Diamondew, 379Felipe, Speedy & osdever for testing NFSScript.
