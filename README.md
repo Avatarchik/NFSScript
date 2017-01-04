@@ -13,4 +13,4 @@ Xan1242 - Provided me with a HUGE list of function addresses.
 
 nlgzrgn - Sent me useful variables.
 
-Also thanks to: Diamondew, 379Felipe, Speedy & osdever for testing NFSScript.
+Also thanks to Diamondew, 379Felipe, Speedy & osdever for testing NFSScript.
