@@ -65,10 +65,7 @@ namespace NFSScript.MW
         {
             get
             {
-                byte b = memory.ReadByte((IntPtr)Addrs.PlayerAddrs.STATIC_PLAYER_AI_CONTROL);
-                if (b == 1)
-                    return true;
-                else return false;
+                return memory.ReadByte((IntPtr)Addrs.PlayerAddrs.STATIC_PLAYER_AI_CONTROL) == 1;
             }
         }
 

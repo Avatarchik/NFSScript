@@ -172,9 +172,9 @@ namespace NFSScript.MW
         /// <summary>
         /// Starts a pursuit.
         /// </summary>
-        public static void ForcePursuitStart(int heat, int copsTimesTen)
+        public static void ForcePursuitStart()
         {
-            Function.Call(Funcs.FORCE_PURSUIT_START, heat, copsTimesTen);
+            Function.Call(Funcs.FORCE_PURSUIT_START);
         }
 
         /// <summary>

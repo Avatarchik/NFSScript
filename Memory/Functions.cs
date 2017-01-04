@@ -613,6 +613,11 @@ namespace NFSScript.Memory
     public static class CarbonFunctions
     {
         /// <summary>
+        /// CameraAI::SetAction((EVIEW_ID, char const *))
+        /// </summary>
+        public const int CAMERA_AI__SET_ACTION = 0x48D620;
+
+        /// <summary>
         ///
         /// </summary>
         public const int CAMERA_SHAKE = 0x0066C240;
@@ -2499,8 +2504,8 @@ namespace NFSScript.Memory
         {
             ASMBuilder function = new ASMBuilder();
 
-            // Push parameters to the stack
-            for (int i = 0; i < o.Length; i++)
+            // Push parameters to the stack backwards since the stack is LIFO
+            for (int i = o.Length; i --> 0;)
             {
                 if (o[i] is byte)
                 {

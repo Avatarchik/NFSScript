@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NFSScript.Memory;
 using static NFSScript.Memory.GameMemory;
 using Addrs = NFSScript.Memory.CarbonAddresses;
 using Funcs = NFSScript.Memory.CarbonFunctions;
@@ -10,10 +11,26 @@ using NFSScript.Math;
 namespace NFSScript.Carbon
 {
     /// <summary>
-    /// A camera class which isn't fully functional. So please wait for a future update till you can use this!
+    /// A debug camera class.
     /// </summary>
-    public class Camera : BaseCamera
+    public class DebugCamera
     {
+        /// <summary>
+        /// CDActionDrive
+        /// </summary>
+        public const string CDActionDrive = "CDActionDrive";
+
+        /// <summary>
+        /// CDActionTrackCar
+        /// </summary>
+        public const string CDActionTrackCar = "CDActionTrackCar";
+
+        /// <summary>
+        /// CDActionDebug
+        /// </summary>
+        public const string CDActionDebug = "CDActionDebug";
+
+        /* //Not for this class atm..
         private const float CARLOD_LOW_VALUE_1 = 10000f;
         private const float CARLOD_LOW_VALUE_2 = 16666.67f;
         private const float CARLOD_LOW_VALUE_3 = 2333.333f;
@@ -35,46 +52,60 @@ namespace NFSScript.Carbon
         private const float CARLOD_DEFAULT_VALUE_4 = 30f;
 
         private float carLODValue1, carLODValue2, carLODValue3, carLODValue4;
+        */
 
         /// <summary>
-        /// Gets or sets the current position of this <see cref="Camera"/>.
+        /// Gets or sets the current position of this <see cref="DebugCamera"/>. (Read only)
         /// </summary>
-        public override Vector3 Position { get; set; }
+        public Vector3 Position
+        {
+            get { return _readPos(); }
+            set { _setPos(value.x, value.y, value.z); }
+        }
 
         /// <summary>
-        /// Gets or sets the current rotation of this <see cref="Camera"/>.
+        /// Instantiates a new <see cref="DebugCamera"/>.
         /// </summary>
-        public override Quaternion Rotation { get; set; }
-
-        /// <summary>
-        /// Returns a value that indicates whether this is the main camera or not.
-        /// </summary>
-        public bool IsMainCamera { get; private set; }
-
-        /// <summary>
-        /// Gets the main camera.
-        /// </summary>
-        public static Camera main { get { return new Camera(true); } }
-
-        /// <summary>
-        /// Instantiates a new <see cref="Camera"/>.
-        /// </summary>
-        public Camera(Vector3 position, Quaternion rotation)
+        public DebugCamera(Vector3 position)
         {
             Position = position;
-            Rotation = rotation;
         }
 
         /// <summary>
-        /// Instantiates a camera class that represents the main game <see cref="Camera"/>.
+        /// Activates the debug camera.
         /// </summary>
-        public Camera(bool isMain)
+        public void Activate()
         {
-            IsMainCamera = isMain;
+            Function.Call(Funcs.CAMERA_AI__SET_ACTION, CDActionDebug, 1);
         }
 
         /// <summary>
-        /// Sets the world cars level of detail for this <see cref="Camera"/>.
+        /// Deactivates the debug camera.
+        /// </summary>
+        public void Deactivate()
+        {
+            Function.Call(Funcs.CAMERA_AI__SET_ACTION, CDActionDrive, 1);
+        }
+
+        internal Vector3 _readPos()
+        {
+            float x = memory.ReadFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_X);
+            float y = memory.ReadFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_Y);
+            float z = memory.ReadFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_Z);
+
+            return new Vector3(x, y, z);
+        }
+
+        internal void _setPos(float x, float y, float z)
+        {
+            memory.WriteFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_X, x);
+            memory.WriteFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_Y, y);
+            memory.WriteFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_Z, z);
+        }
+
+        /* //Not for this class atm..
+        /// <summary>
+        /// Sets the world cars level of detail for this <see cref="DebugCamera"/>.
         /// </summary>
         /// <param name="carLOD"></param>
         public void SetCarLevelOfDetail(CarsLOD carLOD)
@@ -107,6 +138,19 @@ namespace NFSScript.Carbon
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Vector3 _readCameraCoords()
+        {
+            float x = memory.ReadFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_X);
+            float y = memory.ReadFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_Y);
+            float z = memory.ReadFloat((IntPtr)Addrs.CameraAddrs.STATIC_DEBUG_CAMERA_POS_Z);
+
+            return new Vector3(x, y, z);
+        }
+        
         /// <summary>
         /// Sets the world cars level of detail.
         /// </summary>
@@ -145,6 +189,6 @@ namespace NFSScript.Carbon
                 memory.WriteFloat((IntPtr)memory.getBaseAddress + Addrs.CameraAddrs.NONSTATIC_CAMERA_LOD_VALUE_3, _val3);
                 memory.WriteFloat((IntPtr)memory.getBaseAddress + Addrs.CameraAddrs.NONSTATIC_CAMERA_LOD_VALUE_4, _val4);
             }
-        }
+        }*/
     }
 }

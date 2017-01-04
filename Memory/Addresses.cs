@@ -1467,6 +1467,21 @@ namespace NFSScript.Memory
             /// <summary>
             /// 
             /// </summary>
+            public const int STATIC_DEBUG_CAMERA_POS_X = 0xA57BF0;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_DEBUG_CAMERA_POS_Y = 0xA57BF8;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_DEBUG_CAMERA_POS_Z = 0xA57BF4;
+
+            /// <summary>
+            /// 
+            /// </summary>
             public const int NONSTATIC_CAMERA_LOD_VALUE_1 = 0x673070;
 
             /// <summary>
