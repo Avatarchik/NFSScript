@@ -11,10 +11,10 @@ namespace NFSScript
     public static class Time
     {
         /// <summary>
-        /// Returns a timer that will move back and foruth.
+        /// Returns a float that moves back and foruth.
         /// </summary>
-        /// <param name="speed"></param>
-        /// <param name="t"></param>
+        /// <param name="speed">How fast the ping pong occurs</param>
+        /// <param name="t">Factor</param>
         /// <returns></returns>
         public static float PingPong(float speed, float t)
         {

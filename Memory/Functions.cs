@@ -1739,13 +1739,13 @@ namespace NFSScript.Memory
 
 
         /// <summary>
-        ///
+        /// Game_AwardCash(ISimable *,float)
         /// </summary>
         public const int AWARD_CASH = 0x65C000;
 
 
         /// <summary>
-        ///
+        /// Game_AwardPoints(ISimable *,float)
         /// </summary>
         public const int AWARD_POINTS = 0x6565B0;
 
@@ -2173,7 +2173,7 @@ namespace NFSScript.Memory
         /// <summary>
         ///
         /// </summary>
-        public const int ADDVANCE_STORY_LINE_PROGRESSION = 0x64C390;
+        public const int ADVANCE_STORY_LINE_PROGRESSION = 0x64C390;
 
 
         /// <summary>

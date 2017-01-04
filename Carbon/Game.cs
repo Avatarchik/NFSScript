@@ -396,13 +396,19 @@ namespace NFSScript.Carbon
         }
 
         /// <summary>
-        /// Forces a pursuit to start.
+        /// No more new pursuits or cops.
         /// </summary>
-        /// <param name="heat">Pursuit heat.</param>
-        /// <param name="copsTimesTen">How many cops in the pursuit times 10.</param>
-        public static void ForcePursuitStart(float heat, int copsTimesTen)
+        public static void NoNewPursuitsOrCops()
         {
-            Function.Call(FORCE_PURSUIT_START, heat, copsTimesTen);
+            Function.Call(NO_NEW_PURSUITS_OR_COPS);
+        }
+
+        /// <summary>
+        /// Abandons the race.
+        /// </summary>
+        public static void AbandonRace()
+        {
+            Function.Call(ABANDON_RACE);
         }
 
         /// <summary>
@@ -411,6 +417,15 @@ namespace NFSScript.Carbon
         public static void CameraShake()
         {
             Function.Call(CAMERA_SHAKE);
+        }
+
+        /// <summary>
+        /// Start a race from in-game.
+        /// </summary>
+        /// <param name="raceID">The race ID to start.</param>
+        public static void StartRaceFromInGame(string raceID)
+        {
+            Function.Call(START_RACE_FROM_IN_GAME, raceID);
         }
 
         /// <summary>
@@ -427,6 +442,14 @@ namespace NFSScript.Carbon
         public static void JumpToCarLot()
         {
             Function.Call(JUMP_TO_CAR_LOT);
+        }
+
+        /// <summary>
+        /// Jumps to a new wingman.
+        /// </summary>
+        public static void JumpToNewWingman()
+        {
+            Function.Call(JUMP_TO_NEW_WING_MAN);
         }
 
         /// <summary>

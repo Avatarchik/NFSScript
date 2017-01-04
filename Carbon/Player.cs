@@ -5,6 +5,7 @@ using System.Text;
 using NFSScript.Memory;
 using static NFSScript.Memory.GameMemory;
 using Addrs = NFSScript.Memory.CarbonAddresses;
+using static NFSScript.Memory.CarbonFunctions;
 using NFSScript.Math;
 
 namespace NFSScript.Carbon
@@ -159,6 +160,14 @@ namespace NFSScript.Carbon
         {
             uint u = memory.ReadUInteger((IntPtr)Addrs.PlayerAddrs.STATIC_PLAYER_AI_CONTROL);
             memory.WriteByte((IntPtr)u + Addrs.PlayerAddrs.POINTER_PLAYER_AI_CONTROL_POINTER, 0);
+        }
+
+        /// <summary>
+        /// Prevent the player from being busted by the cops.
+        /// </summary>
+        public static void PreventPlayerBeingBusted()
+        {
+            Function.Call(PREVENT_PLAYER_BEING_BUSTED);
         }
 
         /// <summary>

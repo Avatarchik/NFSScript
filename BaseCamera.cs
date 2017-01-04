@@ -15,12 +15,12 @@ namespace NFSScript
         /// <summary>
         /// Gets or sets the position of this <see cref="BaseCamera"/>.
         /// </summary>
-        public virtual Vector3 Position { get; set; }
+        public virtual Vector3 Position { get; }
 
         /// <summary>
         /// Gets or sets the rotation of this <see cref="BaseCamera"/>.
         /// </summary>
-        public virtual Quaternion Rotation { get; set; }
+        public virtual Quaternion Rotation { get; }
 
         /// <summary>
         /// Gets or sets the FOV for this <see cref="BaseCamera"/>.
