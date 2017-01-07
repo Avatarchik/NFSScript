@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseCamera.cs" />
+    <Compile Include="Types\BaseCamera.cs" />
     <Compile Include="Carbon\Camera.cs" />
     <Compile Include="Carbon\Cars.cs" />
     <Compile Include="Carbon\DynamicGameObject.cs" />
@@ -57,23 +57,23 @@
     <Compile Include="Carbon\SkipFEValues.cs" />
     <Compile Include="Carbon\UI.cs" />
     <Compile Include="Carbon\VinylCodes.cs" />
-    <Compile Include="DirectX.cs" />
-    <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="INIReader.cs" />
+    <Compile Include="Core\DirectX.cs" />
+    <Compile Include="Core\ExtensionMethods.cs" />
+    <Compile Include="Core\INIReader.cs" />
     <Compile Include="Math\Point.cs" />
     <Compile Include="Math\Quaternion.cs" />
-    <Compile Include="Memory\Functions.cs" />
-    <Compile Include="Time.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="Core\Time.cs" />
     <Compile Include="Types\Locval.cs" />
-    <Compile Include="Memory\_ASM.cs" />
+    <Compile Include="Core\_ASM.cs" />
     <Compile Include="MW\Game.cs" />
-    <Compile Include="Color.cs" />
-    <Compile Include="Color32.cs" />
-    <Compile Include="Log.cs" />
+    <Compile Include="Types\Color.cs" />
+    <Compile Include="Types\Color32.cs" />
+    <Compile Include="Core\Log.cs" />
     <Compile Include="Math\MathFunctions.cs" />
     <Compile Include="Math\Vector3.cs" />
-    <Compile Include="Memory\Addresses.cs" />
-    <Compile Include="Memory\GameMemory.cs" />
+    <Compile Include="Core\Addresses.cs" />
+    <Compile Include="Core\GameMemory.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="MW\Network.cs" />
     <Compile Include="MW\Player.cs" />
@@ -81,7 +81,7 @@
     <Compile Include="MW\UI.cs" />
     <Compile Include="NFSScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Memory\VAMemory.cs" />
+    <Compile Include="Core\VAMemory.cs" />
     <Compile Include="ProStreet\Game.cs" />
     <Compile Include="ProStreet\Language.cs" />
     <Compile Include="ProStreet\Player.cs" />
