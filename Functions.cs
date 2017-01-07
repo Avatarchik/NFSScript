@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NFSScript.Math;
 
-namespace NFSScript.Memory
+namespace NFSScript.Core
 {
     /// <summary>
     /// A class for Most Wanted functions.
@@ -605,6 +606,592 @@ namespace NFSScript.Memory
         /// 
         /// </summary>
         public const int PAUSE = 0x0062F360;
+
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TABLE__RANDOMIZE = 0x618AC0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AUDIO__SET_FLAG = 0x6048E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int MINI_MAP__ADD_ENGAGED_RACE = 0x604B50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CAMERA__SET_GENERIC_CAMERA = 0x604A50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY = 0x604B80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEBUG__PRINT = 0x604C70;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEBUG__PRINT_INSTANCE = 0x604C80;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DEBUG__SHOW_SCREEN_MESSAGE = 0x6121C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_MESSAGE = 0x611320;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SABOTAGE_ENGINE = 0x60AB60;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int BLOW_ENGINE = 0x60AB30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DETACH_CAMERA_FROM_RACER = 0x611540;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CHALLENGE_COMPLETE = 0x60E200;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CLEAR_AICONTROL = 0x612420;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FORCE_AICONTROL = 0x6123B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int INIT_RACERS = 0x61DBE0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WARP_PLAYER_TO_TRIGGER = 0x611570;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_TRIGGER = 0x604D10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_PLAYER_START_POSITION = 0x611670;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_RACER_GOAL = 0x611700;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_RACER_LAPS_LEFT = 0x604DB0;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int TOTAL_RACER = 0x611440;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_RACE_PLACEMENT = 0x60AA00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_SPEED_TRAP_TRIGGERED = 0x60A7B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_CHECKPOINT_REACHED = 0x6117F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_LAP_FINISHED = 0x611850;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_RACE_FINISHED = 0x6119F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_RACE_ACTIVITY = 0x604ED0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int START_RACE = 0x60DBD0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int START_RACE_TIMERS = 0x604EF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SAVE_START_POSITIONS = 0x604E90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESTORE_START_POSITIONS = 0x60AA50;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_POST_RACE_FLOW = 0x611F20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_ONLINE_POST_RACE_SCREEN = 0x605690;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_COPS_ENABLED = 0x604F40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NO_NEW_PURSUITS_OR_COPS = 0x60AAB0;
+        
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_ENGAGABLE_TRIGGER = 0x604F80;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_GATE_ZONE = 0x611FB0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int EXIT_GATE_ZONE = 0x611FF0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_RACE_OVER_SUMMARY = 0x6120C0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_TRAFFIC_SPEED = 0x605090;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPAWN_COP = 0x60A670;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SPAWN_CHARACTER = 0x604D40;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int UNSPAWN_CHARACTER = 0x604DA0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SEND_CHARACTER_STIMULUS = 0x60A6E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JACK_KNIFE = 0x605030;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_ALL_STAGING = 0x60DF70;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_PAUSE_MENU = 0x6050F0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AWARD_CASH = 0x612130;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AWARD_POINTS = 0x60E030;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CHALLENGE_COMPLETED = 0x605140;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int UNLOCK_RACE = 0x612140;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_COUNTDOWN_DONE = 0x60E160;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RESET_COPS_FOR_RESTART = 0x60AB10;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_TRIGGER_ICON = 0x604D20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int HIDE_TRIGGER_ICON = 0x604D30;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int WARP_TO_MARKER_WHEN_ROAMING = 0x605930;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_SPECIAL_FINALIZATION = 0x605890;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ALLOW_ENGAGE_EVENTS = 0x605640;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ALLOW_MENU_GATES = 0x605650;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ALLOW_ENGAGE_SAFEHOUSE = 0x605660;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_SPECIAL_SETUP = 0x605830;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int CLEAR_RACERS = 0x5E30A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ADD_RACER = 0x601F90;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ADD_CHECKPOINT = 0x5F5C20;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_NEXT_CHECKPOINT_POS = 0x5FE660;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_ROAMING = 0x5FE3E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_IS_LOADING = 0x5DB3E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENTER_SUDDEN_DEATH = 0x604030;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AWARD_BONUS_TIME = 0x5FE600;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_ACTIVELY_RACING = 0x604050;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_TASK_TIME = 0x604040;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DISABLE_BARRIERS = 0x5DBF00;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ENABLE_BIN_BARRIERS = 0x5E3020;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_SCRIPT_WHEN_LOADED = 0x5EEA60;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_HAS_BEEN_WON = 0x604080;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int AWARD_PLAYER_BOUNTY = 0x612220;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JUMP_TO_CAR_LOT = 0x605250;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int ABANDON_RACE = 0x60DEB0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int JUMP_TO_SAFE_HOUSE = 0x6052B0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_TIMER = 0x605300;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int KILL_TIMER = 0x605320;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_GPS = 0x605340;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NAVIGATE_PLAYER_TO = 0x605360;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int NOTIFY_ACTIVITY_FINSIHED = 0x605420;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SKIP_CAREER_INTRO = 0x612490;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_CHANCE_OF_RAIN = 0x6054A0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int FADE = 0x605500;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PLAY_TUTORIAL = 0x6124E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_SAFE_HOUSE_INTRO = 0x605560;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int DO_ZONE_MENU_ACTION = 0x612030;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_CURRENT_TIME_OF_DAY = 0x605780;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int RELOAD_WORLD = 0x6057E0;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_HAS_RAP_SHEET = 0x605670;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SET_WORLD_HEAT = 0x612660;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_WINNING_POST_RACE_SCREEN = 0x60E240;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int SHOW_LOSING_POST_RACE_SCREEN = 0x60E230;
+
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const int PREVENT_PLAYER_BEING_BUSTED = 0x60AE00;
+
     }
 
     /// <summary>
@@ -2574,7 +3161,19 @@ namespace NFSScript.Memory
                     function.Push((uint)o[i]);
                     //Log.Print("TEST", string.Format("Pushing uint {0} to the stack", (uint)o[i]));
                 }
-                else function.Push((int)o[i]);
+                else if (o[i] is Vector3)
+                {
+                    Vector3 vec = (Vector3)o[i];
+                    // REMEMBER THAT THE STACK IS LIFO!
+                    function.Push(vec.z);
+                    function.Push(vec.y);
+                    function.Push(vec.x);
+                }
+                else
+                {
+                    Log.Print("Function Error", string.Format("The type {0} is not supported in Function.Call yet! Pushing 0 instead.", o[i].GetType()));
+                    function.Push(0);
+                }
             }
 
             function.MovEAX(address);

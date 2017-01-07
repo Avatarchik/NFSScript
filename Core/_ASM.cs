@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
 
-namespace NFSScript.Memory
+namespace NFSScript.Core
 {
     /// <summary>
     /// For 'building' ASM code.

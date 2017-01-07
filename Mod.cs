@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace NFSScript
 {
     /// <summary>
-    /// Mod is the base class from which every NFSScript mod derives
+    /// Mod is the base class from which every NFSScript mod derives.
     /// </summary>
     public class Mod
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NFSScript.Memory;
-using static NFSScript.Memory.GameMemory;
-using Addrs = NFSScript.Memory.ProStreetAddresses;
+using NFSScript.Core;
+using static NFSScript.Core.GameMemory;
+using Addrs = NFSScript.Core.ProStreetAddresses;
 using NFSScript.Math;
 
 namespace NFSScript.ProStreet

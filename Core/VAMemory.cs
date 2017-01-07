@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using NFSScript;
 
-namespace NFSScript.Memory
+namespace NFSScript.Core
 {
     /// <summary>
     /// Where the magic happens.

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NFSScript.Memory;
-using static NFSScript.Memory.GameMemory;
-using Addrs = NFSScript.Memory.CarbonAddresses;
-using static NFSScript.Memory.CarbonFunctions;
+using NFSScript.Core;
+using static NFSScript.Core.GameMemory;
+using Addrs = NFSScript.Core.CarbonAddresses;
+using static NFSScript.Core.CarbonFunctions;
 using NFSScript.Math;
 
 namespace NFSScript.Carbon
