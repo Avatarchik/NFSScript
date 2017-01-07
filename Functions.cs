@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NFSScript.Math;
+using NFSScript.Core;
 
-namespace NFSScript.Core
+namespace NFSScript
 {
     /// <summary>
     /// A class for Most Wanted functions.
