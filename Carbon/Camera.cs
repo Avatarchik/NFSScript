@@ -5,7 +5,7 @@ using System.Text;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.CarbonAddresses;
-using Funcs = NFSScript.Core.CarbonFunctions;
+using Funcs = NFSScript.CarbonFunctions;
 using NFSScript.Math;
 
 namespace NFSScript.Carbon

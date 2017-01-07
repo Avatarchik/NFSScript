@@ -5,7 +5,7 @@ using System.Text;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.MWAddresses;
-using Funcs = NFSScript.Core.MWFunctions;
+using Funcs = NFSScript.MWFunctions;
 using NFSScript.Math;
 
 

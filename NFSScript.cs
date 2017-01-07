@@ -13,7 +13,7 @@ namespace NFSScript
         /// <summary>
         /// 
         /// </summary>
-        public static NFSGame currentLoadedNFSGame;   
+        public static NFSGame currentLoadedNFSGame;
     }
 
     /// <summary>
