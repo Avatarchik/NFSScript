@@ -3110,6 +3110,15 @@ namespace NFSScript
                     function.Push((float)o[i]);
                     //Log.Print("TEST", string.Format("Pushing float {0} to the stack", (float)o[i]));
                 }
+                else if (o[i] is bool)
+                {
+                    bool b = (bool)o[i];
+                    byte val = 0;
+
+                    if (b) val = 1;
+
+                    function.Push(val);
+                }
                 else if (o[i] is string)
                 {
                     string s = (string)o[i];

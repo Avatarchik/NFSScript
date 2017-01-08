@@ -37,5 +37,14 @@ namespace NFSScript.MW
         {
 
         }
+
+        /// <summary>
+        /// Set the player's car.
+        /// </summary>
+        /// <param name="carAddress"></param>
+        public void SetPlayerCar(int carAddress)
+        {
+            playerCar = carAddress;
+        }
     }
 }

@@ -373,10 +373,7 @@ namespace NFSScript.Carbon
         /// <param name="isEnabled"></param>
         public static void SetCopsEnabled(bool isEnabled)
         {
-            int val = 0;
-            if (isEnabled) val = 1;
-
-            Function.Call(SET_COPS_ENABLED, val);
+            Function.Call(SET_COPS_ENABLED, isEnabled);
         }
 
         /// <summary>
