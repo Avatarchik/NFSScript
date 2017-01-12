@@ -3,7 +3,7 @@
 // Without SlimDX I'd be stuck infront of mathhelp and mathworks asking myself why it was a good idea to start this project in the first place.
 // So big thanks to SlimDX's Group <3
 // [----------------------------------------------------------------------------------------------------------------------------------------------]
-/**
+/*
  * Copyright (C) 2007-2010 SlimDX Group
  *
  * Permission is hereby granted, free  of charge, to any person obtaining a copy of this software  and

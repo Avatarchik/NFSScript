@@ -5,6 +5,7 @@ using System.Text;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.ProStreetAddresses;
+using Funcs = NFSScript.ProStreetFunctions;
 using NFSScript.Math;
 
 
@@ -36,6 +37,22 @@ namespace NFSScript.ProStreet
                     return true;
                 else return false;
             }
+        }
+
+        /// <summary>
+        /// Shows a loading screen.
+        /// </summary>
+        public static void ShowLoadingScreen()
+        {
+            Function.Call(Funcs.SHOW_LOADING_SCREEN);
+        }
+
+        /// <summary>
+        /// Hides a loading screen.
+        /// </summary>
+        public static void HideLoadingScreen()
+        {
+            Function.Call(Funcs.HIDE_LOADING_SCREEN);
         }
 
         /// <summary>
