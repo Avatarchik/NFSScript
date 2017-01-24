@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.MWAddresses;
@@ -21,6 +22,11 @@ namespace NFSScript.MW
         /// Returns a value that indicates whether the sirens are enabled or not.
         /// </summary>
         public static bool sirensEnabled { get; private set; }
+
+        /// <summary>
+        /// Returns the save game directory path.
+        /// </summary>
+        public static string saveDirectory { get { return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NFS Most Wanted"); } }
 
         /// <summary>
         /// The scale at which the gameplay's time is passing. (Not the global time scale)

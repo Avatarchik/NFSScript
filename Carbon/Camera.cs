@@ -14,7 +14,7 @@ namespace NFSScript.Carbon
     /// A debug camera class.
     /// </summary>
     public class DebugCamera
-    {
+    {        
         /// <summary>
         /// CDActionDrive
         /// </summary>

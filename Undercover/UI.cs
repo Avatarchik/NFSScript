@@ -26,5 +26,33 @@ namespace NFSScript.Undercover
             ASM.Abolish(address, INVALID_SECRET_CODE_ENTRY_TEXT_MAX_LENGTH);
             memory.WriteStringASCII(address, msg.Substring(0, INVALID_SECRET_CODE_ENTRY_TEXT_MAX_LENGTH));
         }
+
+        /// <summary>
+        /// Returns the point of where the game's cursor is located on screen. (Inaccurate)
+        /// </summary>
+        public static Point cursorPosition
+        {
+            get
+            {
+                ushort x = memory.ReadUShort((IntPtr)Addrs.UIAddrs.STATIC_CURSOR_POS_X);
+                ushort y = memory.ReadUShort((IntPtr)Addrs.UIAddrs.STATIC_CURSOR_POS_Y);
+
+                return new Point(x, y);
+            }
+        }
+
+        /// <summary>
+        /// Returns the point of where the world map's cursor is located on screen. (Inaccurate)
+        /// </summary>
+        public static Point worldMapCursorPosition
+        {
+            get
+            {
+                ushort x = memory.ReadUShort((IntPtr)Addrs.UIAddrs.STATIC_UI_WORLD_MAP_CUSROR_POS_X);
+                ushort y = memory.ReadUShort((IntPtr)Addrs.UIAddrs.STATIC_UI_WORLD_MAP_CUSROR_POS_Y);
+
+                return new Point(x, y);
+            }
+        }
     }
 }

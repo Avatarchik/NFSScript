@@ -31,7 +31,7 @@ namespace NFSScript.MW
         public int trackNumber;
 
         /// <summary>
-        /// Instantiate a SkipFESettingsClass
+        /// Instantiate a new SkipFEValues class.
         /// </summary>
         public SkipFEValues()
         {

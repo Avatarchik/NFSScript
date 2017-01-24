@@ -3072,6 +3072,31 @@ namespace NFSScript
     public static class ProStreetFunctions
     {
         /// <summary>
+        /// LUA function: FEDialogScreen::ShowCancel((char const *))
+        /// </summary>
+        public const int FEDIALOGSCREEN_SHOW_CANCEL = 0x0060C6C0;
+
+        /// <summary>
+        /// LUA function: FEDialogScreen::ShowDialog((char const *, char const *, char const *, char const *, bool))
+        /// </summary>
+        public const int FEDIALOGSCREEN_SHOW_DIALOG = 0x0060B130;
+
+        /// <summary>
+        /// LUA function: FEDialogScreen::ShowOk((char const *))
+        /// </summary>
+        public const int FEDIALOGSCREEN_SHOW_OK = 0x0060C5E0;
+
+        /// <summary>
+        /// LUA function: FEDialogScreen::ShowOkCancel((char const *))
+        /// </summary>
+        public const int FEDIALOGSCREEN_SHOW_OK_CANCEL = 0x0060C630;
+
+        /// <summary>
+        /// LUA function: FEDialogScreen::ShowYesNo((char const *))
+        /// </summary>
+        public const int FEDIALOGSCREEN_SHOW_YES_NO = 0x0060C710;
+
+        /// <summary>
         ///
         /// </summary>
         public const int TABLE__RANDOMIZE = 0x6EF100;
@@ -3194,13 +3219,13 @@ namespace NFSScript
         /// <summary>
         ///
         /// </summary>
-        public const int CLEAR_AICONTROL = 0x6EA760;
+        public const int CLEAR_AI_CONTROL = 0x6EA760;
 
 
         /// <summary>
         ///
         /// </summary>
-        public const int FORCE_AICONTROL = 0x6EA6F0;
+        public const int FORCE_AI_CONTROL = 0x6EA6F0;
 
 
         /// <summary>
@@ -4303,6 +4328,27 @@ namespace NFSScript
     }
 
     /// <summary>
+    /// A class for Undercover functions.
+    /// </summary>
+    public static class UndercoverFunctions
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FORCE_PURSUIT_START = 0x0065C840;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int BAIL_PURSUIT = 0x6672F0;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FORCE_PURSUIT_END = 0x669000;
+    }
+
+    /// <summary>
     /// A class for functions related functions.
     /// </summary>
     public static class Function
@@ -4411,7 +4457,7 @@ namespace NFSScript
                 {
                     Vector3 vec = (Vector3)o[i];
                     // REMEMBER THAT THE STACK IS LIFO!
-                    function.Push(vec.y); // In EAGL the Z is basically Y, I swapped them for convinence, it should get pushed first this haven't been test so I might be wrong either way I need to code the pushes differently for different game engines.
+                    function.Push(vec.y); // In EAGL the Z is basically Y, I swapped them for convinence, it should get pushed first. This haven't been test so I might be wrong either way I need to code the pushes differently for different game engines.
                     function.Push(vec.z);
                     function.Push(vec.x);
                 }

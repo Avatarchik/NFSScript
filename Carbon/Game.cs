@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.CarbonAddresses;
@@ -52,6 +53,11 @@ namespace NFSScript.Carbon
         public const int DRAW_NIS_CAR_POINTER_ID = 0x5;
 
         private static float sirensIntensityR = 1, sirensIntensityB = 1, sirensIntensityW = 1;
+
+        /// <summary>
+        /// Returns the save game directory path.
+        /// </summary>
+        public static string saveDirectory { get { return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NFS Carbon"); } }
 
         /// <summary>
         /// Returns a value that indicates whether the sirens are enabled in or not.
@@ -589,7 +595,8 @@ namespace NFSScript.Carbon
             memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRAFFIC_ONCOMING, skipFEValues.trafficOncoming);
             memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_DAMAGE_ENABLED, damageB);
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRAFFIC_DENSITY, skipFEValues.trafficDensity);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PLAYER_CAR, skipFEValues.GetPlayerCarInteger());
+            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PLAYER_CAR, skipFEValues.playerCar);
+
         }
 
         internal static void _setAudioIDValue(int id, bool value)

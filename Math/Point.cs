@@ -10,7 +10,7 @@ namespace NFSScript.Math
     /// <summary>
     /// Represents an ordered pair of integer x and y coordinates that defines a <see cref="Point"/> in a two-dimensional plane.
     /// </summary>
-    public class Point
+    public struct Point
     {
         /// <summary>
         /// Returns the x-coordinate of this <see cref="Point"/>.

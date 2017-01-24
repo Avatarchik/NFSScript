@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\GameInit.cs" />
+    <Compile Include="ProStreet\SkipFEValues.cs" />
+    <Compile Include="Types\Any.cs" />
     <Compile Include="Types\BaseCamera.cs" />
     <Compile Include="Carbon\Camera.cs" />
     <Compile Include="Carbon\Cars.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="Math\Quaternion.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Core\Time.cs" />
+    <Compile Include="Types\CustomValueType.cs" />
     <Compile Include="Types\Locval.cs" />
     <Compile Include="Core\_ASM.cs" />
     <Compile Include="MW\Game.cs" />
@@ -90,6 +94,7 @@
     <Compile Include="Undercover\Language.cs" />
     <Compile Include="Undercover\Player.cs" />
     <Compile Include="Undercover\SecretCodes.cs" />
+    <Compile Include="Undercover\SkipFEValues.cs" />
     <Compile Include="Undercover\UI.cs" />
     <Compile Include="Underground2\Game.cs" />
     <Compile Include="Underground2\Player.cs" />

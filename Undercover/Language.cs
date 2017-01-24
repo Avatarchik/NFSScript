@@ -13,6 +13,6 @@ namespace NFSScript.Undercover
         /// <summary>
         /// The invalid code entry string
         /// </summary>
-        public const string SECRET_CODE_ENTRY_INVALID = "Your Secret Code was entered incorrectly.  Please check your Secret Code and try again.";
+        public const string SECRET_CODE_ENTRY_INVALID = "Your Secret Code was entered incorrectly. Please check your Secret Code and try again.";
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NFSScript.Core;
+using static NFSScript.Core.GameMemory;
 
 namespace NFSScript.Carbon
 {
@@ -110,10 +112,25 @@ namespace NFSScript.Carbon
         /// </summary>
         public byte _unsafeSplitScreen;
 
-        private int playerCar;
+        /// <summary>
+        /// Player's car address as an integer.
+        /// </summary>
+        public int playerCar;
 
         /// <summary>
-        /// Instantiate a SkipFESettingsClass
+        /// Returns the SkipFE player's car handle.
+        /// </summary>
+        /// <returns></returns>
+        public IntPtr PlayerCarHandle
+        {
+            get
+            {
+                return new IntPtr(playerCar);
+            }
+        }
+
+        /// <summary>
+        /// Instantiate a new SkipFEValues class.
         /// </summary>
         public SkipFEValues()
         {
@@ -121,7 +138,7 @@ namespace NFSScript.Carbon
         }
 
         private void SetDefaults()
-        {
+        {  
             _unsafeSplitScreen = 0;
             playerPerformance = 0;
             numberOfAICars = 0;
@@ -158,24 +175,6 @@ namespace NFSScript.Carbon
         public void SetPlayerCar(int carAddress)
         {
             playerCar = carAddress;
-        }
-
-        /// <summary>
-        /// Returns the player's car address.
-        /// </summary>
-        /// <returns></returns>
-        public CarAddress GetPlayerCar()
-        {
-            return (CarAddress)Enum.Parse(typeof(CarAddress), playerCar.ToString());
-        }
-
-        /// <summary>
-        /// Returns the player's car address.
-        /// </summary>
-        /// <returns></returns>
-        public int GetPlayerCarInteger()
-        {
-            return playerCar;
         }
     }
 }

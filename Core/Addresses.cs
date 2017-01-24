@@ -1653,6 +1653,29 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_IS_GAMEPLAY_ACTIVE = 0xA54EBC;
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_IS_SOUND_ENABLED = 0x00A9DA00;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_IS_AUDIO_STREAMING_ENABLED = 0x00A9DA04;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_IS_SPEECH_ENABLED = 0x00A9DA08;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_IS_NISAUDIO_ENABLED = 0x00A9DA0C;
         }
 
         /// <summary>
@@ -1669,6 +1692,440 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_IS_ACTIVITY_MODE = 0xC003BE;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SONG_ID = 0xA4F6F8;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE = 0x00BFBC08;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_PLAYER_BLUEPRINT_TYPE = 0x00BFBC10;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRACK_DIRECTION = 0x00BFBC14;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_NUM_AI_CARS = 0x00BFBC18;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_RACE_TYPE = 0x00BFBC23;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_ENABLE_DEBUG_ACTIVITY = 0x00BFBC2C;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_AUTO_RACE_TEST = 0x00BFBC2E;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_PRACTICE_MODE = 0x00BFBC30;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_CONTROLLER_CONFIG = 0x00BFBC34;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_DISABLE_SMOKE = 0x00BFBC38;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_BOOT_FLOW = 0x00BFBC41;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRACK_NUMBER = 0x00A9D974;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_RACE_ID = 0x00A9D978;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_PLAYER_CAR = 0x00A9D97C;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_SKIP_FE_TURBO_SFX = 0x00A9D980;
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_EMERGENCY_SAVE_MEMORY = 0x00BFBC42;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_B_FORCE_RUMBLE_ON = 0x00BFBC43;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC44 = 0x00BFBC44;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC48 = 0x00BFBC48;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC4_C = 0x00BFBC4C;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_PRECIPITATION_ENABLE = 0x00BFBC50;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC54 = 0x00BFBC54;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_BYTE__BFBC5_A = 0x00BFBC5A;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_UNLOCK_ALL_THINGS = 0x00BFBC5B;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC5_C = 0x00BFBC5C;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC60 = 0x00BFBC60;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC64 = 0x00BFBC64;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC68 = 0x00BFBC68;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_CAREER_INTRO = 0x00BFBC6C;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SHOW_ALL_CARS_IN_FE = 0x00BFBC6E;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_B_ENABLE_RIGHT_STICK_IN_FRONTEND = 0x00BFBC6F;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC70 = 0x00BFBC70;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_MOVIES = 0x00BFBC74;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_BYTE__BFBC78 = 0x00BFBC78;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_BYTE__BFBC79 = 0x00BFBC79;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_BYTE__BFBC7_A = 0x00BFBC7A;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC7_C = 0x00BFBC7C;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_FLT__BFBC80 = 0x00BFBC80;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC84 = 0x00BFBC84;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_FLT__BFBC88 = 0x00BFBC88;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_FLT__BFBC8_C = 0x00BFBC8C;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC90 = 0x00BFBC90;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBC94 = 0x00BFBC94;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_FRAME_RATE_DIV = 0x00BFBC98;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_FLT__BFBC9_C = 0x00BFBC9C;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__BFBCA0 = 0x00BFBCA0;
+
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_POV_TYPE1 = 0x00A9D9A8;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_NUM_PLAYER_CARS = 0x00A9D9AC;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_NUM_LAPS = 0x00A9D9B0;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRAFFIC_ONCOMING = 0x00A9D9B4;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__A9_D9_B8 = 0x00A9D9B8;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_CONTROLLER_CONFIG1 = 0x00A9D9C0;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_CONTROLLER_CONFIG2 = 0x00A9D9C4;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__A9_D9_C8 = 0x00A9D9C8;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRACTION_CONTROL_LEVEL = 0x00A9D9CC;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_STABILITY_CONTROL_LEVEL = 0x00A9D9D0;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_ANTI_LOCK_BRAKES_LEVEL = 0x00A9D9D4;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_DRIFT_ASSIST_LEVEL = 0x00A9D9D8;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_RACELINE_ASSIST_LEVEL = 0x00A9D9DC;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_BRAKING_ASSIST_LEVEL = 0x00A9D9E0;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_NUM_PLAYER_SCREENS = 0x00A9D9E4;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRANSMISSION_SETUP = 0x00A9D9E8;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_SUN_AND_SKY_ATTRIB = 0x00A9D9EC;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_G__ATTACHMENT_IN_PHYSICS = 0x00A9D9F0;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_G__FIX_CAR_COLLISION_VOLUMES = 0x00A9D9F4;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_B_RUMBLE_ENABLED = 0x00A9D9F5;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_TIME_OF_DAY_SWAP_ENABLE = 0x00A9D9F6;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_DWORD__A9_D9_FC = 0x00A9D9FC;
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_IS_MEMCARD_ENABLED = 0x00A9DA10;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_OFF__A9_DA14 = 0x00A9DA14;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_OFF__A9_DA18 = 0x00A9DA18;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_G_STARTING_CASH = 0x00A9DA1C;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_FLT__A9_DA20 = 0x00A9DA20;
+
+
+            /// <summary>
+            ///
+            /// </summary>
+            public const int STATIC_FLT__A9_DA24 = 0x00A9DA24;
+
         }
 
         /// <summary>
@@ -1695,6 +2152,21 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_PLAYER_POS_Z = 0xFFF918;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int NON_STATIC_PLAYER_CASH = 0x006B0EA8;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int POINTER_NON_STATIC_PLAYER_CASH = 0x1E0;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_AI_CONTROL_PLAYER_CAR = 0x00BFBC2D;
         }
 
         /// <summary>
@@ -1768,6 +2240,36 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_IS_GAMEPLAY_ACTIVE = 0xD891F2;
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_IS_SOUND_ENABLED = 0x00D3CEC0;
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_IS_AUDIO_STREAMING_ENABLED = 0x00D3CEC4;
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_IS_SPEECH_ENABLED = 0x00D3CEC8;
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_IS_NISAUDIO_ENABLED = 0x00D3CECC;
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_IS_MEMCARD_ENABLED = 0x00D3CED0;
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_IS_MEMCARD_VERSIONING_ENABLED = 0x00D3CED4;
         }
 
         /// <summary>
@@ -1789,6 +2291,219 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public static int STATIC_IS_ACTIVITY_MODE = 0xD952DD;
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_TIME_OF_DAY_SWAP_ENABLE = 0x00D3CEB0;
+
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_ENABLE_PATHFINDER_MUSIC = 0x00D3CEB4;
+
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_FORCE_PURSUIT_SONG_ID = 0x00D3CEB8;
+
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_FORCE_CHASEDOWN_SONG_ID = 0x00D3CEBC;
+
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_G_STARTING_CASH = 0x00D3CEF8;
+
+
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE = 0x00DAA0A4;
+
+
+            /// <summary>
+            /// Generated: enum GRace::Context
+            /// </summary>
+            public const int STATIC_SKIP_FE_RACE_TYPE = 0x00DAA0A8;
+
+
+            /// <summary>
+            /// Generated: enum eTrackDirection
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRACK_DIRECTION = 0x00DAA0AC;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_NUM_AI_CARS = 0x00DAA0B0;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_MAX_COPS = 0x00DAA0B4;
+            
+            /// <summary>
+            /// Generated: bool
+            /// </summary>
+            public const int STATIC_SKIP_FE_DISABLE_COPS = 0x00DAA0B8;
+            
+            /// <summary>
+            /// Generated: bool
+            /// </summary>
+            public const int STATIC_SKIP_FE_HELICOPTER = 0x00DAA0B9;
+            
+            /// <summary>
+            /// Generated: bool
+            /// </summary>
+            public const int STATIC_SKIP_FE_POINT_2_POINT = 0x00DAA0BA;
+            
+            /// <summary>
+            /// Generated: bool
+            /// </summary>
+            public const int STATIC_SKIP_FE_PRACTICE_MODE = 0x00DAA0BB;
+            
+            /// <summary>
+            /// Generated: enum eLanguages
+            /// </summary>
+            public const int STATIC_SKIP_FE_LANGUAGE = 0x00DAA0BC;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_START_FRAME_RATE_MAPPER = 0x00DAA0C0;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_START_CAR_FRAME_RATE_MAPPER = 0x00DAA0C4;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_FOREVER = 0x00D3CDF0;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRACK_NUMBER = 0x00D3CDF4;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_RACE_ID = 0x00D3CDF8;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_MISSION_ID = 0x00D3CDFC;
+            
+            /// <summary>
+            /// Generated: char *
+            /// </summary>
+            public const int STATIC_SKIP_FE_PLAYER_CAR = 0x00D3CE00;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_PLAYER2_CAR = 0x00D3CE04;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_TURBO_SFX = 0x00D3CE08;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_AI_CARS = 0x00D3CE0C;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_PARKING_LOT_CARS = 0x00D3CE10;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_PARKING_LOT_DRIVER_CLASSES = 0x00D3CE14;
+            
+            /// <summary>
+            /// Generated: char const *
+            /// </summary>
+            public const int STATIC_SKIP_FE_RENDER_TEST_CARS = 0x00D3CE18;
+            
+            /// <summary>
+            /// Generated: float
+            /// </summary>
+            public const int STATIC_SKIP_FE_RENDER_TEST_SPACING = 0x00D3CE1C;
+            
+            /// <summary>
+            /// Generated: float
+            /// </summary>
+            public const int STATIC_SKIP_FE_PLAYER_PERFORMANCE = 0x00D3CE20;
+            
+            /// <summary>
+            /// Generated: enumPOVTypes
+            /// </summary>
+            public const int STATIC_SKIP_FE_POV_TYPE1 = 0x00D3CE24;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_NUM_PLAYER_CARS = 0x00D3CE28;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_NUM_LAPS = 0x00D3CE2C;
+            
+            /// <summary>
+            /// Generated: enum eOpponentStrength
+            /// </summary>
+            public const int STATIC_SKIP_FE_DIFFICULTY = 0x00D3CE34;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_CONTROLLER_CONFIG2 = 0x00D3CE3C;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_BRAKE_ASSIST_LEVEL = 0x00D3CE40;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_TRACTION_CONTROL_LEVEL = 0x00D3CE44;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_STABILITY_CONTROL_LEVEL = 0x00D3CE48;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_ANTI_LOCK_BRAKES_LEVEL = 0x00D3CE4C;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_DRIFT_ASSIST_LEVEL = 0x00D3CE50;
+            
+            /// <summary>
+            /// Generated: int
+            /// </summary>
+            public const int STATIC_SKIP_FE_RACELINE_ASSIST_LEVEL = 0x00D3CE54;
+
         }
 
         /// <summary>
@@ -1812,6 +2527,26 @@ namespace NFSScript.Core
         /// </summary>
         public struct UIAddrs
         {
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_CURSOR_POS_X = 0xDFAD7C;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_CURSOR_POS_Y = 0xDFAD80;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_UI_WORLD_MAP_CUSROR_POS_X = 0x135D210;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_UI_WORLD_MAP_CUSROR_POS_Y = 0x135D214;
+
             /// <summary>
             /// Length of 87.
             /// </summary>

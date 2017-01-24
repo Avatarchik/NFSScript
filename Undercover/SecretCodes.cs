@@ -95,7 +95,7 @@ namespace NFSScript.Undercover
         UNLOCK_DIECAST_PORSCHE_911_TURBO_BONUS_CAR, UNLOCK_NEED_FOR_SPEED_TERLINGUA_BONUS_CAR};
 
         /// <summary>
-        /// Checks if a set secret code is valid.
+        /// Checks if the set secret code is valid.
         /// </summary>
         /// <param name="secretCode"></param>
         /// <returns></returns>
