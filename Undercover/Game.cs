@@ -6,6 +6,7 @@ using System.IO;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.UndercoverAddresses;
+using static NFSScript.UndercoverFunctions;
 using NFSScript.Math;
 
 namespace NFSScript.Undercover
@@ -117,7 +118,113 @@ namespace NFSScript.Undercover
         {
             _setSkipFEValues(skipFEValues);
         }
-        
+
+        /// <summary>
+        /// Set a value that decides whether cops are enabled in the game or not.
+        /// </summary>
+        /// <param name="isEnabled"></param>
+        public static void SetCopsEnabled(bool isEnabled)
+        {
+            Function.Call(SET_COPS_ENABLED, isEnabled);
+        }
+
+        /// <summary>
+        /// Bails the current pursuit.
+        /// </summary>
+        public static void BailPursuit()
+        {
+            Function.Call(BAIL_PURSUIT);
+        }
+
+        /// <summary>
+        /// Forces the current pursuit to end.
+        /// </summary>
+        public static void ForceEndPursuit()
+        {
+            Function.Call(FORCE_PURSUIT_END);
+        }
+
+        /// <summary>
+        /// Forces a pursuit to start.
+        /// </summary>
+        public static void ForcePursuitStart()
+        {
+            Function.Call(FORCE_PURSUIT_START);
+        }
+
+        /// <summary>
+        /// No more new pursuits or cops.
+        /// </summary>
+        public static void NoNewPursuitsOrCops()
+        {
+            Function.Call(NO_NEW_PURSUITS_OR_COPS);
+        }
+
+        /// <summary>
+        /// Abandons the race.
+        /// </summary>
+        public static void AbandonRace()
+        {
+            Function.Call(ABANDON_RACE);
+        }
+
+        /// <summary>
+        /// Restarts the current mission.
+        /// </summary>
+        public static void RestartMission()
+        {
+            Function.Call(E_RESTART_MISSION);
+        }
+
+        /// <summary>
+        /// Ends the current mission.
+        /// </summary>
+        public static void EndMission()
+        {
+            Function.Call(END_MISSION);
+        }
+
+        /// <summary>
+        /// Calls the spotted helicopter cam event.
+        /// </summary>
+        public static void HeliCopCam()
+        {
+            Function.Call(CAMERA_HELI_COP_CAM);
+        }
+
+        /// <summary>
+        /// Shakes the camera.
+        /// </summary>
+        public static void CameraShake()
+        {
+            Function.Call(CAMERA_SHAKE);
+        }
+
+        /// <summary>
+        /// Start a race from in-game.
+        /// </summary>
+        /// <param name="raceID">The race ID to start.</param>
+        public static void StartRaceFromInGame(string raceID)
+        {
+            Function.Call(START_RACE_FROM_IN_GAME, raceID);
+        }
+
+        /// <summary>
+        /// Jumps to a safehouse.
+        /// </summary>
+        public static void JumpToSafeHouse()
+        {
+            Function.Call(JUMP_TO_SAFE_HOUSE);
+        }
+
+        /// <summary>
+        /// Jumps to a car lot.
+        /// </summary>
+        public static void JumpToCarLot()
+        {
+            Function.Call(JUMP_TO_CAR_LOT);
+        }
+
         internal static void _setAudioIDValue(int id, bool value)
         {
             byte b = 0;

@@ -363,6 +363,11 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_NUMBER_OF_STREAM_ANIM = 0x8F93FC;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int POINTER_CAR_OFFSET = 0xB0;
         }
 
         /// <summary>
