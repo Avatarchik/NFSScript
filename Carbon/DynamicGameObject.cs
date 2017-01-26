@@ -23,6 +23,39 @@ namespace NFSScript.Carbon
         }
 
         /// <summary>
+        /// Dynamic game object handling values.
+        /// </summary>
+        public Vector3 HandlingVectors
+        {
+            get
+            {
+                int addr = (int)memory.getBaseAddress;
+                int offset = 0;
+                for (int i = 0; i < ID; i++)
+                {
+                    offset = offset + Addrs.GenericAddrs.POINTER_CAR_OFFSET;
+                }
+                float x = memory.ReadFloat((IntPtr)Addrs.PlayerAddrs.NONSTATIC_PLAYER_X_POS + offset + 30);
+                float y = memory.ReadFloat((IntPtr)Addrs.PlayerAddrs.NONSTATIC_PLAYER_Y_POS + offset + 30);
+                float z = memory.ReadFloat((IntPtr)Addrs.PlayerAddrs.NONSTATIC_PLAYER_Y_POS + offset + 30);
+
+                return new Vector3(x, y, z);
+            }
+            set
+            {
+                int addr = (int)memory.getBaseAddress;
+                int offset = 0;
+                for (int i = 0; i < ID; i++)
+                {
+                    offset = offset + Addrs.GenericAddrs.POINTER_CAR_OFFSET;
+                }
+                memory.WriteFloat((IntPtr)Addrs.PlayerAddrs.NONSTATIC_PLAYER_X_POS + offset + 30, value.x);
+                memory.WriteFloat((IntPtr)Addrs.PlayerAddrs.NONSTATIC_PLAYER_Y_POS + offset + 30, value.y);
+                memory.WriteFloat((IntPtr)Addrs.PlayerAddrs.NONSTATIC_PLAYER_Y_POS + offset + 30, value.z);
+            }
+        }
+
+        /// <summary>
         /// The position of the defined dynamic object ID.
         /// </summary>
         public Vector3 Position

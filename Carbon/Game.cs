@@ -91,7 +91,7 @@ namespace NFSScript.Carbon
         }
 
         /// <summary>
-        /// Returns the amount of seconds it takes to render a frame
+        /// Returns the amount of seconds it takes to render a frame. (Might be inaccurate)
         /// </summary>
         public static float lastFrameTime
         {

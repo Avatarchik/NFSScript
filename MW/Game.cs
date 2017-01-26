@@ -44,6 +44,17 @@ namespace NFSScript.MW
         }
 
         /// <summary>
+        /// Returns the amount of seconds it takes to render a frame
+        /// </summary>
+        public static float lastFrameTime
+        {
+            get
+            {
+                return memory.ReadFloat((IntPtr)Addrs.GenericAddrs.STATIC_LAST_FRAME_TIME);
+            }
+        }
+
+        /// <summary>
         /// Returns true is the gameplay is active.
         /// </summary>
         public static bool isGameplayActive

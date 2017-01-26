@@ -332,6 +332,11 @@
             /// <summary>
             /// 
             /// </summary>
+            public const int STATIC_LAST_FRAME_TIME = 0x983E90;
+
+            /// <summary>
+            /// 
+            /// </summary>
             public const int STATIC_IS_GAMEPLAY_ACTIVE = 0x8F40C4;
 
             /// <summary>
@@ -377,7 +382,7 @@
             /// <summary>
             /// 
             /// </summary>
-            public const int POINTER_CAR_OFFSET = 0xB0;
+            public const int POINTER_CAR_OFFSET = 0x160;
         }
 
         /// <summary>
