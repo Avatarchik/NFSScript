@@ -215,9 +215,9 @@ namespace NFSScript.Core
         /// Writes a NOP instruction at a specified address.
         /// </summary>
         /// <param name="address"></param>
-        public static void MakeNopAt(IntPtr address)
+        public static void MakeNopAt(int address)
         {
-            GameMemory.memory.WriteByte(address, 0x90);
+            GameMemory.memory.WriteByte((IntPtr)address, 0x90);
         }
 
         /// <summary>
@@ -225,11 +225,11 @@ namespace NFSScript.Core
         /// </summary>
         /// <param name="address"></param>
         /// <param name="count"></param>
-        public static void MakeNopAt(IntPtr address, int count)
+        public static void MakeNopAt(int address, int count)
         {
             for (int i = 0; i < count; i++)
             {
-                uint addr = (uint)address + 0x01;
+                int addr = address + 0x02;
                 GameMemory.memory.WriteByte((IntPtr)addr, 0x90);
             }
         }

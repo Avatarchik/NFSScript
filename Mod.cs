@@ -17,6 +17,11 @@ namespace NFSScript
         public const string INITIALIZE_METHOD = "Initialize";
 
         /// <summary>
+        /// The pre method name.
+        /// </summary>
+        public const string PRE_METHOD = "Pre";
+
+        /// <summary>
         /// The main method name.
         /// </summary>
         public const string MAIN_METHOD = "Main";
@@ -60,6 +65,12 @@ namespace NFSScript
         /// The OnExit method name.
         /// </summary>
         public const string ONEXIT_METHOD = "OnExit";
+
+        /// <summary>
+        /// Pre is called as soon as the the game memory loads.
+        /// </summary>
+        public virtual void Pre()
+        { }
 
         /// <summary>
         /// Initialize is called when the script is ready and enabled just before any of the Main and Update methods are called.
