@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\GameInit.cs" />
+    <Compile Include="Core\PatternScan.cs" />
     <Compile Include="MW\DynamicGameObject.cs" />
     <Compile Include="ProStreet\SkipFEValues.cs" />
     <Compile Include="Types\Any.cs" />

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace NFSScript.Core
+﻿namespace NFSScript.Core
 {
     /// <summary>
     /// 
@@ -436,7 +431,7 @@ namespace NFSScript.Core
             /// </summary>
             public const int STATIC_GLOBAL_COP_LIGHTS_WHITE = 0x742b09; // float
         }
-            
+
         /// <summary>
         /// 
         /// </summary>
@@ -547,7 +542,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_PLAYER_Y_ROT = 0x9386D0;
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -863,7 +858,7 @@ namespace NFSScript.Core
         /// 
         /// </summary>
         public struct GameAddrs
-        {            
+        {
             /// <summary>
             /// 
             /// </summary>
@@ -1175,7 +1170,7 @@ namespace NFSScript.Core
             /// float
             /// </summary>
             public const int STATIC_ANIMATION_SPEED = 0xA798B4; // float (Default value is 45f)
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1241,7 +1236,7 @@ namespace NFSScript.Core
             /// </summary>
 
             public const int STATIC_MAX_DRIFT_MULTIPLIER_CANYON = 0x6AB943; // byte
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1322,7 +1317,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_POLICE_IGNORE_PLAYER = 0x44A7E4; // ulong (Enabled: 3943023862U || Disabled: 2047198454U)
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1362,7 +1357,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_AUGMENTED_DRIFT_WITH_EBRAKE = 0xA9E65B; // byte (Disabled: 0 || Enabled: 1)
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1372,7 +1367,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_PLAYER_HEADLIGHTS_RIGHT = 0x7cbf77; // float
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1623,7 +1618,7 @@ namespace NFSScript.Core
             public const int OFFSET_MINIMAP_ROUTE_COLOR_CENTER = 0x4;
         }
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
@@ -2343,167 +2338,167 @@ namespace NFSScript.Core
             /// Generated: enum eTrackDirection
             /// </summary>
             public const int STATIC_SKIP_FE_TRACK_DIRECTION = 0x00DAA0AC;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_NUM_AI_CARS = 0x00DAA0B0;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_MAX_COPS = 0x00DAA0B4;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_DISABLE_COPS = 0x00DAA0B8;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_HELICOPTER = 0x00DAA0B9;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_POINT_2_POINT = 0x00DAA0BA;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_PRACTICE_MODE = 0x00DAA0BB;
-            
+
             /// <summary>
             /// Generated: enum eLanguages
             /// </summary>
             public const int STATIC_SKIP_FE_LANGUAGE = 0x00DAA0BC;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_START_FRAME_RATE_MAPPER = 0x00DAA0C0;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_START_CAR_FRAME_RATE_MAPPER = 0x00DAA0C4;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_FOREVER = 0x00D3CDF0;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_TRACK_NUMBER = 0x00D3CDF4;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_RACE_ID = 0x00D3CDF8;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_MISSION_ID = 0x00D3CDFC;
-            
+
             /// <summary>
             /// Generated: char *
             /// </summary>
             public const int STATIC_SKIP_FE_PLAYER_CAR = 0x00D3CE00;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_PLAYER2_CAR = 0x00D3CE04;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_TURBO_SFX = 0x00D3CE08;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_AI_CARS = 0x00D3CE0C;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_PARKING_LOT_CARS = 0x00D3CE10;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_PARKING_LOT_DRIVER_CLASSES = 0x00D3CE14;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_RENDER_TEST_CARS = 0x00D3CE18;
-            
+
             /// <summary>
             /// Generated: float
             /// </summary>
             public const int STATIC_SKIP_FE_RENDER_TEST_SPACING = 0x00D3CE1C;
-            
+
             /// <summary>
             /// Generated: float
             /// </summary>
             public const int STATIC_SKIP_FE_PLAYER_PERFORMANCE = 0x00D3CE20;
-            
+
             /// <summary>
             /// Generated: enumPOVTypes
             /// </summary>
             public const int STATIC_SKIP_FE_POV_TYPE1 = 0x00D3CE24;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_NUM_PLAYER_CARS = 0x00D3CE28;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_NUM_LAPS = 0x00D3CE2C;
-            
+
             /// <summary>
             /// Generated: enum eOpponentStrength
             /// </summary>
             public const int STATIC_SKIP_FE_DIFFICULTY = 0x00D3CE34;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_CONTROLLER_CONFIG2 = 0x00D3CE3C;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_BRAKE_ASSIST_LEVEL = 0x00D3CE40;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_TRACTION_CONTROL_LEVEL = 0x00D3CE44;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_STABILITY_CONTROL_LEVEL = 0x00D3CE48;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_ANTI_LOCK_BRAKES_LEVEL = 0x00D3CE4C;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_DRIFT_ASSIST_LEVEL = 0x00D3CE50;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
