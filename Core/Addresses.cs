@@ -1,10 +1,120 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Runtime.InteropServices;
 
 namespace NFSScript.Core
 {
+    /// <summary>
+    /// Static class open to use for every game/module instance.
+    /// </summary>
+    public static class GenericAddress
+    {
+        /// <summary>
+        /// Exposes the matchPattern function.
+        /// </summary>
+        public static class PatternScan
+        {
+            #region API Definitions
+            [DllImport("kernel32.dll")]
+            private static extern Boolean ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, Byte[] buffer, UInt32 size, Int32 lpNumberOfBytesRead);
+            [DllImport("kernel32.dll")]
+            private static extern Int32 VirtualQueryEx(IntPtr hProcess, IntPtr lpAddress, out MEMORY_BASIC_INFORMATION lpBuffer, Int32 dwLength);
+
+            private const Int32 MEM_COMMIT = 0x1000;
+            private const Int32 PAGE_GUARD = 0x100;
+            [StructLayout(LayoutKind.Sequential)]
+            private struct MEMORY_BASIC_INFORMATION
+            {
+                public IntPtr BaseAddress;
+                public IntPtr AllocationBase;
+                public UInt32 AllocationProtect;
+                public UInt32 RegionSize;
+                public UInt32 State;
+                public UInt32 Protect;
+                public UInt32 Type;
+            }
+            #endregion
+
+            private static IntPtr match(Byte[] mem, Byte[] pattern)
+            {
+                // Setup filler array
+                List<Int32> bytes = new List<Int32>(255).Select(i => { i = pattern.Length; return i; }).ToList();
+                for (Int32 i = 0; i < pattern.Length - 1; i++)
+                    bytes[pattern[i]] = (pattern.Length - 1) - i;
+
+                Int32 ptr = 0;
+                do
+                {
+                    // Check if scan has reached the pattern fully, in little-endian order
+                    for (Int32 i = (pattern.Length - 1); i > 0; i--)
+                    {
+                        if (mem[ptr + i] != pattern[i])
+                            break; // Doesn't match fully, break
+                        if (i == 0)
+                            return new IntPtr(ptr); // Matched fully, return
+                    }
+                    ptr += bytes[mem[ptr + (pattern.Length - 1)]];
+                } while (ptr <= (mem.Length - pattern.Length));
+                return IntPtr.Zero;
+            }
+
+            /// <summary>
+            /// Utilizes WIN32 RPM and VQEx to find given pattern in the given process context.
+            /// </summary>
+            /// <example>
+            /// A sample usage of the <see cref="matchPattern(string, byte[])"/> method:
+            /// <code>
+            /// using static NFSScript.Core.GenericAddress.PatternScan;
+            /// 
+            /// class MyClass
+            /// {
+            ///     static int Main()
+            ///     {
+            ///         IntPtr addr1 = matchPattern("nfsw.exe", new Byte[] { 0x55, 0xF0, 0x0, 0xAB });
+            ///         IntPtr addr2 = matchPattern("gameplay.dll", new Byte[] { 0x78, 0xA, 0xBC, 0xEB });
+            ///     }
+            /// }
+            /// </code>
+            /// </example>
+            /// <remarks>Doesn't support 'ghost' patterns, a.k.a. unknown byte patterns; e.g., xx??x.</remarks>
+            /// <param name="processName">The process context, has to be idenntifiable in WIN32 memory; e.g., myExe.exe, myLib.dll.</param>
+            /// <param name="pattern">Byte array that containts the pattern in big-endian order (MSB->LSB).</param>
+            /// <returns>The dynamic memory address if found, else IntPtr.Zero.</returns>
+            public static IntPtr matchPattern(String processName, Byte[] pattern)
+            {
+                // Init
+                Process context = Process.GetProcessesByName(processName)[0];
+                List<MEMORY_BASIC_INFORMATION> memoryRegistry = new List<MEMORY_BASIC_INFORMATION>();
+
+                // Fill in registry
+                IntPtr iAddress = new IntPtr();
+                Int32 memoryDump;
+                do
+                {
+                    MEMORY_BASIC_INFORMATION memoryInfo = new MEMORY_BASIC_INFORMATION();
+                    memoryDump = VirtualQueryEx(context.Handle, iAddress, out memoryInfo, Marshal.SizeOf(memoryInfo));
+                    if ((memoryInfo.State & MEM_COMMIT) != 0 && (memoryInfo.Protect & PAGE_GUARD) == 0)
+                        memoryRegistry.Add(memoryInfo);
+                    iAddress = new IntPtr(memoryInfo.BaseAddress.ToInt32() + (Int32)memoryInfo.RegionSize);
+                } while (memoryDump > 0);
+
+                // Scan
+                foreach (MEMORY_BASIC_INFORMATION cur in memoryRegistry)
+                {
+                    Byte[] buffer = new Byte[cur.RegionSize];
+                    ReadProcessMemory(context.Handle, cur.BaseAddress, buffer, cur.RegionSize, 0);
+
+                    IntPtr Result = match(buffer, pattern);
+                    if (Result != IntPtr.Zero)
+                        return new IntPtr(cur.BaseAddress.ToInt32() + Result.ToInt32());
+                }
+                return IntPtr.Zero;
+            }
+        }
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -436,7 +546,7 @@ namespace NFSScript.Core
             /// </summary>
             public const int STATIC_GLOBAL_COP_LIGHTS_WHITE = 0x742b09; // float
         }
-            
+
         /// <summary>
         /// 
         /// </summary>
@@ -547,7 +657,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_PLAYER_Y_ROT = 0x9386D0;
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -863,7 +973,7 @@ namespace NFSScript.Core
         /// 
         /// </summary>
         public struct GameAddrs
-        {            
+        {
             /// <summary>
             /// 
             /// </summary>
@@ -1175,7 +1285,7 @@ namespace NFSScript.Core
             /// float
             /// </summary>
             public const int STATIC_ANIMATION_SPEED = 0xA798B4; // float (Default value is 45f)
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1241,7 +1351,7 @@ namespace NFSScript.Core
             /// </summary>
 
             public const int STATIC_MAX_DRIFT_MULTIPLIER_CANYON = 0x6AB943; // byte
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1322,7 +1432,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_POLICE_IGNORE_PLAYER = 0x44A7E4; // ulong (Enabled: 3943023862U || Disabled: 2047198454U)
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1362,7 +1472,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_AUGMENTED_DRIFT_WITH_EBRAKE = 0xA9E65B; // byte (Disabled: 0 || Enabled: 1)
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1372,7 +1482,7 @@ namespace NFSScript.Core
             /// 
             /// </summary>
             public const int STATIC_PLAYER_HEADLIGHTS_RIGHT = 0x7cbf77; // float
-            
+
             /// <summary>
             /// 
             /// </summary>
@@ -1623,7 +1733,7 @@ namespace NFSScript.Core
             public const int OFFSET_MINIMAP_ROUTE_COLOR_CENTER = 0x4;
         }
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
@@ -2343,167 +2453,167 @@ namespace NFSScript.Core
             /// Generated: enum eTrackDirection
             /// </summary>
             public const int STATIC_SKIP_FE_TRACK_DIRECTION = 0x00DAA0AC;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_NUM_AI_CARS = 0x00DAA0B0;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_MAX_COPS = 0x00DAA0B4;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_DISABLE_COPS = 0x00DAA0B8;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_HELICOPTER = 0x00DAA0B9;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_POINT_2_POINT = 0x00DAA0BA;
-            
+
             /// <summary>
             /// Generated: bool
             /// </summary>
             public const int STATIC_SKIP_FE_PRACTICE_MODE = 0x00DAA0BB;
-            
+
             /// <summary>
             /// Generated: enum eLanguages
             /// </summary>
             public const int STATIC_SKIP_FE_LANGUAGE = 0x00DAA0BC;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_START_FRAME_RATE_MAPPER = 0x00DAA0C0;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_START_CAR_FRAME_RATE_MAPPER = 0x00DAA0C4;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_FOREVER = 0x00D3CDF0;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_TRACK_NUMBER = 0x00D3CDF4;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_RACE_ID = 0x00D3CDF8;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_MISSION_ID = 0x00D3CDFC;
-            
+
             /// <summary>
             /// Generated: char *
             /// </summary>
             public const int STATIC_SKIP_FE_PLAYER_CAR = 0x00D3CE00;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_PLAYER2_CAR = 0x00D3CE04;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_TURBO_SFX = 0x00D3CE08;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_AI_CARS = 0x00D3CE0C;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_PARKING_LOT_CARS = 0x00D3CE10;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_PARKING_LOT_DRIVER_CLASSES = 0x00D3CE14;
-            
+
             /// <summary>
             /// Generated: char const *
             /// </summary>
             public const int STATIC_SKIP_FE_RENDER_TEST_CARS = 0x00D3CE18;
-            
+
             /// <summary>
             /// Generated: float
             /// </summary>
             public const int STATIC_SKIP_FE_RENDER_TEST_SPACING = 0x00D3CE1C;
-            
+
             /// <summary>
             /// Generated: float
             /// </summary>
             public const int STATIC_SKIP_FE_PLAYER_PERFORMANCE = 0x00D3CE20;
-            
+
             /// <summary>
             /// Generated: enumPOVTypes
             /// </summary>
             public const int STATIC_SKIP_FE_POV_TYPE1 = 0x00D3CE24;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_NUM_PLAYER_CARS = 0x00D3CE28;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_NUM_LAPS = 0x00D3CE2C;
-            
+
             /// <summary>
             /// Generated: enum eOpponentStrength
             /// </summary>
             public const int STATIC_SKIP_FE_DIFFICULTY = 0x00D3CE34;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_CONTROLLER_CONFIG2 = 0x00D3CE3C;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_BRAKE_ASSIST_LEVEL = 0x00D3CE40;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_TRACTION_CONTROL_LEVEL = 0x00D3CE44;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_STABILITY_CONTROL_LEVEL = 0x00D3CE48;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_ANTI_LOCK_BRAKES_LEVEL = 0x00D3CE4C;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
             public const int STATIC_SKIP_FE_DRIFT_ASSIST_LEVEL = 0x00D3CE50;
-            
+
             /// <summary>
             /// Generated: int
             /// </summary>
