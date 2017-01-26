@@ -68,7 +68,7 @@ namespace NFSScript.Carbon
         }
 
         /// <summary>
-        /// A struct that represents the UI's minimap
+        /// A class that represents the UI's minimap.
         /// </summary>
         public static class Minimap
         {

@@ -166,10 +166,7 @@ namespace NFSScript.Carbon
         {
             get
             {
-                byte b = memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_IS_MEMCARD_VERSIONING_ENABLED);
-                if (b == 1)
-                    return true;
-                else return false;
+                return memory.ReadBoolean((IntPtr)Addrs.GenericAddrs.STATIC_IS_MEMCARD_VERSIONING_ENABLED);
             }
         }
 
@@ -180,10 +177,7 @@ namespace NFSScript.Carbon
         {
             get
             {
-                byte b = memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_IS_COLLECTORS_EDITION);
-                if (b == 1)
-                    return true;
-                else return false;
+                return memory.ReadBoolean((IntPtr)Addrs.GenericAddrs.STATIC_IS_COLLECTORS_EDITION);
             }
         }
 
@@ -209,9 +203,7 @@ namespace NFSScript.Carbon
         /// <param name="value"></param>
         public static void EnableRightStickInFrontend(bool value)
         {
-            byte b = 0;
-            if (value) b = 1;
-            memory.WriteByte((IntPtr)Addrs.GenericAddrs.STATIC_ENABLE_RIGHT_STICK_IN_FRONTEND, b);
+            memory.WriteBoolean((IntPtr)Addrs.GenericAddrs.STATIC_ENABLE_RIGHT_STICK_IN_FRONTEND, value);
         }
 
         /// <summary>
@@ -220,9 +212,7 @@ namespace NFSScript.Carbon
         /// <param name="value"></param>
         public static void gDebugEventStrings(bool value)
         {
-            byte b = 0;
-            if (value) b = 1;
-            memory.WriteByte((IntPtr)Addrs.GenericAddrs.STATIC_GDEBUG_EVENT_STRINGS, b);
+            memory.WriteBoolean((IntPtr)Addrs.GenericAddrs.STATIC_GDEBUG_EVENT_STRINGS, value);
         }
 
         /// <summary>
@@ -231,9 +221,7 @@ namespace NFSScript.Carbon
         /// <param name="value"></param>
         public static void bRumbleEnabled(bool value)
         {
-            byte b = 0;
-            if (value) b = 1;
-            memory.WriteByte((IntPtr)Addrs.GenericAddrs.STATIC_B_RUMBLE_ENABLED, b);
+            memory.WriteBoolean((IntPtr)Addrs.GenericAddrs.STATIC_B_RUMBLE_ENABLED, value);
         }
 
         /// <summary>
@@ -242,9 +230,7 @@ namespace NFSScript.Carbon
         /// <param name="value"></param>
         public static void PrecipitationEnable(bool value)
         {
-            byte b = 0;
-            if (value) b = 1;
-            memory.WriteByte((IntPtr)Addrs.GenericAddrs.STATIC_PRECIPITATION_ENABLE, b);
+            memory.WriteBoolean((IntPtr)Addrs.GenericAddrs.STATIC_PRECIPITATION_ENABLE, value);
         }
 
         /// <summary>
@@ -253,9 +239,7 @@ namespace NFSScript.Carbon
         /// <param name="value"></param>
         public static void EnableDebugCarCustomize(bool value)
         {
-            byte b = 0;
-            if (value) b = 1;
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_ENABLE_DEBUG_CAR_CUSTOMIZE, b);
+            memory.WriteBoolean((IntPtr)Addrs.GameAddrs.STATIC_ENABLE_DEBUG_CAR_CUSTOMIZE, value);
         }
 
         /// <summary>
@@ -272,9 +256,7 @@ namespace NFSScript.Carbon
         /// <param name="value"></param>
         public static void DoScreenPrintf(bool value)
         {
-            byte b = 0;
-            if (value) b = 1;
-            memory.WriteByte((IntPtr)Addrs.GenericAddrs.STATIC_DO_SCREEN_PRINTF, b);
+            memory.WriteBoolean((IntPtr)Addrs.GenericAddrs.STATIC_DO_SCREEN_PRINTF, value);
         }
 
         /// <summary>
@@ -329,10 +311,7 @@ namespace NFSScript.Carbon
         /// <param name="value"></param>
         public static void SkipMovies(bool value)
         {
-            byte b = 0;
-            if (value) b = 1;
-
-            memory.WriteByte((IntPtr)Addrs.GenericAddrs.STATIC_SKIP_MOVIES, b);
+            memory.WriteBoolean((IntPtr)Addrs.GenericAddrs.STATIC_SKIP_MOVIES, value);
         }
 
         /// <summary>
@@ -495,11 +474,7 @@ namespace NFSScript.Carbon
         /// <param name="enabled"></param>
         public static void SkipFE(bool enabled)
         {
-            byte value = 0;
-            if (enabled)
-                value = 1;
-
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_ENABLED, value);
+            memory.WriteBoolean((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_ENABLED, enabled);
         }
 
         /// <summary>
@@ -528,15 +503,6 @@ namespace NFSScript.Carbon
         public static string GetCurrentActivityID()
         {
             return Encoding.Default.GetString(memory.ReadByteArray((IntPtr)Addrs.GameAddrs.STATIC_ACTIVITY_ID, 106).Where(b => b != 0x00).ToArray());
-        }
-
-        /// <summary>
-        /// Returns the current game state.
-        /// </summary>
-        /// <returns></returns>
-        public static GameState GetGameState()
-        {
-            return (GameState)Enum.Parse(typeof(GameState), memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_GAME_STATE).ToString());
         }
 
         /// <summary>
@@ -912,25 +878,51 @@ namespace NFSScript.Carbon
     }
 
     /// <summary>
-    /// An enum for the game state.
+    /// The game's flow manager class.
     /// </summary>
-    public enum GameState : byte
+    public class GameFlowManager
     {
         /// <summary>
-        /// 
+        /// The address where the main GameFlowManager is located at.
         /// </summary>
-        None = 0,
+        public static IntPtr address { get { return (IntPtr)Addrs.GenericAddrs.STATIC_GAME_STATE; } }
+
+        private int gameStateValue;
+
+        /// <summary>
+        /// The main GameFlowManager.
+        /// </summary>
+        public static GameFlowManager TheGameFlowManager { get { return new GameFlowManager(memory.ReadInt32(address)); } }
+
+        /// <summary>
+        /// Instantiate a GameFlowManager class.
+        /// </summary>
+        /// <param name="gameStateValue"></param>
+        private GameFlowManager(int gameStateValue)
+        {
+            this.gameStateValue = gameStateValue;
+        }
+
         /// <summary>
         /// 
         /// </summary>
-        FE = 3,
+        /// <param name="instance"></param>
+        public static implicit operator int(GameFlowManager instance)
+        {
+            if (instance == null)
+            {
+                return -1;
+            }
+            return instance.gameStateValue;
+        }
+
         /// <summary>
-        /// 
+        /// Returns the game state value string.
         /// </summary>
-        Loading = 5,
-        /// <summary>
-        /// 
-        /// </summary>
-        InGame = 6
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return gameStateValue.ToString();
+        }
     }
 }

@@ -8,6 +8,7 @@ using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.ProStreetAddresses;
 using Funcs = NFSScript.ProStreetFunctions;
 using NFSScript.Math;
+using NFSScript.Types;
 
 
 namespace NFSScript.ProStreet
@@ -28,15 +29,6 @@ namespace NFSScript.ProStreet
         public static int CurrentlyPlayingSongID
         {
             get { return memory.ReadInt32((IntPtr)Addrs.GameAddrs.STATIC_SONG_ID); }
-        }
-
-        /// <summary>
-        /// Returns the current game state.
-        /// </summary>
-        /// <returns></returns>
-        public static GameState GetGameState()
-        {
-            return (GameState)Enum.Parse(typeof(GameState), memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_GAME_STATE).ToString());
         }
 
         /// <summary>
@@ -299,36 +291,55 @@ namespace NFSScript.ProStreet
 
             return (b == 1);
         }
+        
     }
 
     /// <summary>
-    /// An enum that represents the game state in NFS: ProStreet.
+    /// The game's flow manager class.
     /// </summary>
-    public enum GameState : byte
+    public class GameFlowManager
     {
         /// <summary>
-        /// No game state.
+        /// The address where the main GameFlowManager is located at.
         /// </summary>
-        None = 0,
+        public static IntPtr address { get { return (IntPtr)Addrs.GenericAddrs.STATIC_GAME_STATE; } }
+
+        private int gameStateValue;
+
         /// <summary>
-        /// Loading before going into the FE game state.
+        /// The main GameFlowManager.
         /// </summary>
-        LoadingFE = 1,
+        public static GameFlowManager TheGameFlowManager { get { return new GameFlowManager(memory.ReadInt32(address)); } }
+
         /// <summary>
-        /// FE game state.
+        /// Instantiate a GameFlowManager class.
         /// </summary>
-        FE = 3,
+        /// <param name="gameStateValue"></param>
+        private GameFlowManager(int gameStateValue)
+        {
+            this.gameStateValue = gameStateValue;
+        }
+
         /// <summary>
-        /// Preloading game state.
+        /// 
         /// </summary>
-        PreLoading = 4,
+        /// <param name="instance"></param>
+        public static implicit operator int(GameFlowManager instance)
+        {
+            if (instance == null)
+            {
+                return -1;
+            }
+            return instance.gameStateValue;
+        }
+
         /// <summary>
-        /// Loading game state. (Inconsistent)
+        /// Returns the game state value string.
         /// </summary>
-        Loading = 5,
-        /// <summary>
-        /// InGame game state.
-        /// </summary>
-        InGame = 6
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return gameStateValue.ToString();
+        }
     }
 }

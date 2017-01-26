@@ -54,5 +54,19 @@ namespace NFSScript.Undercover
                 return new Point(x, y);
             }
         }
+
+        /// <summary>
+        /// A class that represents the UI's minimap.
+        /// </summary>
+        public static class Minimap
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public static bool ShowNonPursuitCops {
+                get { return memory.ReadByte((IntPtr)Addrs.UIAddrs.STATIC_MINIMAP_SHOW_NON_PURSUIT_COPS) == 1; }
+                set { memory.WriteBoolean((IntPtr)Addrs.UIAddrs.STATIC_MINIMAP_SHOW_NON_PURSUIT_COPS, value); }
+            }
+        }
     }
 }

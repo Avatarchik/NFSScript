@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
+
 // Took it from StackOverflow because I couldn't be bothered writing my own .INI file.
 namespace NFSScript
 {

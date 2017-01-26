@@ -598,7 +598,7 @@ namespace NFSScript.Core
                 this.CheckProcess();
             try
             {
-                return this.WriteByteArray(pOffset, BitConverter.GetBytes((short)pData));
+                return this.WriteByteArray(pOffset, BitConverter.GetBytes(pData));
             }
             catch (Exception ex)
             {
