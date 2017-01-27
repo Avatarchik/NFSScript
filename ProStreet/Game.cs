@@ -163,25 +163,6 @@ namespace NFSScript.ProStreet
         }
 
         /// <summary>
-        /// Skips the frontend and set the values from the defined SkipFEValues class to the game's SkipFE values. Keep in mind that on every gameplay change (Going to the safehouse) the SkipFE gets disabled and must be recalled again.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        public static void StartSkipFE(SkipFEValues skipFEValues)
-        {
-            SkipFE(true);
-            _setSkipFEValues(skipFEValues);
-        }
-
-        /// <summary>
-        /// Sets the values from the defined SkipFEValues class to the game's SkipFE values without skipping frontend.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        public static void SetSkipFE(SkipFEValues skipFEValues)
-        {
-            _setSkipFEValues(skipFEValues);
-        }
-
-        /// <summary>
         /// Returns a string with a length of 26 which contains the latest entered code (If the player has entered any).
         /// </summary>
         /// <returns></returns>
@@ -218,49 +199,6 @@ namespace NFSScript.ProStreet
             }
 
             memory.WriteByte(address, b);
-        }
-
-        internal static void _setSkipFEValues(SkipFEValues skipFEValues)
-        {
-            byte bEnableDebugActivity = 0, bAutoRaceTest = 0, bPracticeMode = 0, bDisableSmoke = 0;
-
-            if (skipFEValues.enableDebugActivity)
-                bEnableDebugActivity = 1;
-            if (skipFEValues.autoRaceTest)
-                bAutoRaceTest = 1;
-            if (skipFEValues.practiceMode)
-                bPracticeMode = 1;
-            if (skipFEValues.disableSmoke)
-                bDisableSmoke = 1;
-
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_ENABLE_DEBUG_ACTIVITY, bEnableDebugActivity);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_AUTO_RACE_TEST, bAutoRaceTest);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PRACTICE_MODE, bPracticeMode);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_DISABLE_SMOKE, bDisableSmoke);
-
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_AI_CARS, skipFEValues.numAICars);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_PLAYER_CARS, skipFEValues.numPlayerCars);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_LAPS, skipFEValues.numLaps);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_PLAYER_SCREENS, skipFEValues.numPlayerScreens);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PLAYER_CAR, skipFEValues.playerCar);
-
-            memory.WriteByteArray((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PLAYER_BLUEPRINT_TYPE, skipFEValues.playerBlueprintType);
-            memory.WriteByteArray((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRACK_DIRECTION, skipFEValues.trackDirection);
-            memory.WriteByteArray((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_RACE_TYPE, skipFEValues.raceType);
-            memory.WriteByteArray((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_CONTROLLER_CONFIG, skipFEValues.controllerConfig);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_CONTROLLER_CONFIG1, skipFEValues.controllerConfig1);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_CONTROLLER_CONFIG2, skipFEValues.controllerConfig2);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRACTION_CONTROL_LEVEL, skipFEValues.tractionControlLevel);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_STABILITY_CONTROL_LEVEL, skipFEValues.stabilityControlLevel);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_ANTI_LOCK_BRAKES_LEVEL, skipFEValues.antiLockBrakesLevel);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_DRIFT_ASSIST_LEVEL, skipFEValues.driftAssistLevel);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_RACELINE_ASSIST_LEVEL, skipFEValues.raceLineAssistLevel);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_BRAKING_ASSIST_LEVEL, skipFEValues.brakingAssistLevel);
-            memory.WriteByteArray((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRANSMISSION_SETUP, skipFEValues.transmissionSetup);
-            memory.WriteByteArray((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_BOOT_FLOW, skipFEValues.bootFlow);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRACK_NUMBER, skipFEValues.trackNumber);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_RACE_ID, skipFEValues.raceID);
-            memory.WriteInt32((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TURBO_SFX, skipFEValues.turboSFX);
         }
 
         internal static bool _readAudioIDValue(int id)

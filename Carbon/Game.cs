@@ -478,25 +478,6 @@ namespace NFSScript.Carbon
         }
 
         /// <summary>
-        /// Skips the frontend and set the values from the defined SkipFEValues class to the game's SkipFE values. Keep in mind that on every gameplay change (Going to the safehouse) the SkipFE gets disabled and must be recalled again.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        public static void StartSkipFE(SkipFEValues skipFEValues)
-        {
-            SkipFE(true);
-            _setSkipFEValues(skipFEValues);
-        }
-
-        /// <summary>
-        /// Sets the values from the defined SkipFEValues class to the game's SkipFE values without skipping frontend.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        public static void SetSkipFE(SkipFEValues skipFEValues)
-        {
-            _setSkipFEValues(skipFEValues);
-        }
-
-        /// <summary>
         /// Returns the current activity ID.
         /// </summary>
         /// <returns></returns>
@@ -525,44 +506,6 @@ namespace NFSScript.Carbon
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_RED, r);
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_BLUE, b);
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_WHITE, w);
-        }
-
-        /// <summary>
-        /// Internal function for settings SkipFE values.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        internal static void _setSkipFEValues(SkipFEValues skipFEValues)
-        {
-            byte copsB = 0, trafficB = 0, wingmanB = 0, aiControlB = 0, damageB = 0;
-            if (skipFEValues.copsDisabled)
-                copsB = 1;
-            if (skipFEValues.disableTraffic)
-                trafficB = 1;
-            if (skipFEValues.noWingMan)
-                wingmanB = 1;
-            if (skipFEValues.aiControlPlayer)
-                aiControlB = 1;
-            if (skipFEValues.damageEnabled)
-                damageB = 1;
-
-            memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PLAYER_PERFORMANCE, skipFEValues.playerPerformance);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_AI_CARS, skipFEValues.numberOfAICars);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_COPS_DISABLED, copsB);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_OF_COPS, skipFEValues.numberOfCops);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRAFFIC_DISABLED, trafficB);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_POINT_2_POINT, skipFEValues.point2Point);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_RACE_TYPE, skipFEValues.raceType);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NO_WINGMAN, wingmanB);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_AI_CONTROL_PLAYER, aiControlB);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRACK_NUMBER, skipFEValues.trackNumber);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_RACE_ID, skipFEValues.raceID);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_PLAYER_CARS, skipFEValues.numberPlayerCars);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_OF_LAPS, skipFEValues.numberOfLaps);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRAFFIC_ONCOMING, skipFEValues.trafficOncoming);
-            memory.WriteByte((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_DAMAGE_ENABLED, damageB);
-            memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRAFFIC_DENSITY, skipFEValues.trafficDensity);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PLAYER_CAR, skipFEValues.playerCar);
-
         }
 
         internal static void _setAudioIDValue(int id, bool value)

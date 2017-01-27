@@ -48,12 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\GameInit.cs" />
     <Compile Include="Core\PatternScan.cs" />
     <Compile Include="Inheritables.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="MW\DynamicGameObject.cs" />
-    <Compile Include="ProStreet\SkipFEValues.cs" />
     <Compile Include="Types\Any.cs" />
     <Compile Include="Types\BaseCamera.cs" />
     <Compile Include="Carbon\Camera.cs" />
@@ -61,7 +59,6 @@
     <Compile Include="Carbon\DynamicGameObject.cs" />
     <Compile Include="Carbon\Game.cs" />
     <Compile Include="Carbon\Player.cs" />
-    <Compile Include="Carbon\SkipFEValues.cs" />
     <Compile Include="Carbon\UI.cs" />
     <Compile Include="Carbon\VinylCodes.cs" />
     <Compile Include="Core\DirectX.cs" />
@@ -85,7 +82,6 @@
     <Compile Include="Mod.cs" />
     <Compile Include="MW\Network.cs" />
     <Compile Include="MW\Player.cs" />
-    <Compile Include="MW\SkipFEValues.cs" />
     <Compile Include="MW\UI.cs" />
     <Compile Include="NFSScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,7 +94,6 @@
     <Compile Include="Undercover\Language.cs" />
     <Compile Include="Undercover\Player.cs" />
     <Compile Include="Undercover\SecretCodes.cs" />
-    <Compile Include="Undercover\SkipFEValues.cs" />
     <Compile Include="Undercover\UI.cs" />
     <Compile Include="Underground2\Game.cs" />
     <Compile Include="Underground2\Player.cs" />

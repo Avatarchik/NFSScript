@@ -219,25 +219,6 @@ namespace NFSScript.MW
         }
 
         /// <summary>
-        /// Skips the frontend and set the values from the defined SkipFEValues class to the game's SkipFE values. Keep in mind that on every gameplay change (Going to the safehouse) the SkipFE gets disabled and must be recalled again.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        public static void StartSkipFE(SkipFEValues skipFEValues)
-        {
-            SkipFE(true);
-            _setSkipFEValues(skipFEValues);
-        }
-
-        /// <summary>
-        /// Sets the values from the defined SkipFEValues class to the game's SkipFE values without skipping frontend.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        public static void SetSkipFE(SkipFEValues skipFEValues)
-        {
-            _setSkipFEValues(skipFEValues);
-        }
-
-        /// <summary>
         /// Enable the police sirens for the cars present in the world.
         /// </summary>
         public static void EnablePoliceSirens()
@@ -293,18 +274,6 @@ namespace NFSScript.MW
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_RED, r);
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_BLUE, b);
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_WHITE, w);
-        }
-
-        /// <summary>
-        /// Internal function for settings SkipFE values.
-        /// </summary>
-        /// <param name="skipFEValues"></param>
-        internal static void _setSkipFEValues(SkipFEValues skipFEValues)
-        {
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_AI_CARS, skipFEValues.numberOfAICars);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_TRACK_NUMBER, skipFEValues.trackNumber);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_NUM_LAPS, skipFEValues.numberOfLaps);
-            memory.WriteInteger((IntPtr)Addrs.GameAddrs.STATIC_SKIP_FE_PLAYER_CAR, skipFEValues.playerCar);
         }
 
         /// <summary>

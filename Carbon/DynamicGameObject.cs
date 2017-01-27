@@ -12,7 +12,7 @@ namespace NFSScript.Carbon
     /// <summary>
     /// A class that represents a dynamic (physics) game object in the game world.
     /// </summary>
-    public class DynamicGameObject
+    public class DynamicGameObject : EAGLPhysicsObject
     {
         /// <summary>
         /// Returns the player's car dynamic game object.
@@ -23,9 +23,9 @@ namespace NFSScript.Carbon
         }
 
         /// <summary>
-        /// Dynamic game object handling values.
+        /// Dynamic game object gravity values.
         /// </summary>
-        public Vector3 HandlingVectors
+        public override Vector3 GravityValues
         {
             get
             {
@@ -58,7 +58,7 @@ namespace NFSScript.Carbon
         /// <summary>
         /// The position of the defined dynamic object ID.
         /// </summary>
-        public Vector3 Position
+        public override Vector3 Position
         {
             get
             {
@@ -91,7 +91,7 @@ namespace NFSScript.Carbon
         /// <summary>
         /// The rotation of the defined dynamic object ID.
         /// </summary>
-        public Quaternion Rotation
+        public override Quaternion Rotation
         {
             get
             {
@@ -125,7 +125,7 @@ namespace NFSScript.Carbon
         /// <summary>
         /// The ID of the dynamic object that the class will effect, an ID bigger than 32 will probably crash the game.
         /// </summary>
-        public byte ID { get; set; }
+        public override byte ID { get; set; }
 
         /// <summary>
         /// Instantiate a dynamic game object class by ID.
