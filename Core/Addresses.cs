@@ -342,6 +342,26 @@
             /// <summary>
             /// 
             /// </summary>
+            public const int STATIC_IS_SOUND_ENABLED = 0x008F86F8;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_IS_AUDIO_STREAMING_ENABLED = 0x008F86FC;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_IS_SPEECH_ENABLED = 0x008F8700;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public const int STATIC_IS_NIS_AUDIO_ENABLED = 0x008F8704;
+
+            /// <summary>
+            /// 
+            /// </summary>
             public const int STATIC_GAME_STATE = 0x00925E90;
 
             /// <summary>

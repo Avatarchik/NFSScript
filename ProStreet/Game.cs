@@ -10,7 +10,6 @@ using Funcs = NFSScript.ProStreetFunctions;
 using NFSScript.Math;
 using NFSScript.Types;
 
-
 namespace NFSScript.ProStreet
 {
     /// <summary>
@@ -18,15 +17,17 @@ namespace NFSScript.ProStreet
     /// </summary>
     public static class Game
     {
+        #region Constant Variables
         private const int SOUND_ID = 0x1;
         private const int AUDIO_STREAMING_ID = 0x2;
         private const int SPEECH_ID = 0x3;
         private const int NIS_AUDIO_ID = 0x4;
+        #endregion
 
         /// <summary>
         /// Returns the currently playing song ID.
         /// </summary>
-        public static int CurrentlyPlayingSongID
+        public static int currentlyPlayingSongID
         {
             get { return memory.ReadInt32((IntPtr)Addrs.GameAddrs.STATIC_SONG_ID); }
         }

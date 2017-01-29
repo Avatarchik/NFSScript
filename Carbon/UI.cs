@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Runtime.InteropServices;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.CarbonAddresses;
@@ -159,7 +155,7 @@ namespace NFSScript.Carbon
             }
         }
     }
-/*
+/*  // Soon.
     /// <summary>
     /// An enum for the text mode.
     /// </summary>

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace NFSScript.Math
 {
@@ -14,7 +11,6 @@ namespace NFSScript.Math
         /// Returns 3.14159265358979, you know... PI.
         /// </summary>
         public const float PI = 3.14159265358979323846f;
-
 
         /// <summary>
         /// Degrees-to-radians conversion constant (Read only).
@@ -30,6 +26,31 @@ namespace NFSScript.Math
         /// A small floating point value, a VERY small floating point value.
         /// </summary>
         public const float Epsilon = 1.192093E-07F;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float SingleMileToKM = 1.609344f;
+
+        /// <summary>
+        /// Returns a converted value from miles per hour to kilometers per hour.
+        /// </summary>
+        /// <param name="mph">The miles per hour value to convert.</param>
+        /// <returns></returns>
+        public static float ToKPH(float mph)
+        {
+            return mph * SingleMileToKM;
+        }
+
+        /// <summary>
+        /// Returns a converted value from kilometers per hour to miles per hour.
+        /// </summary>
+        /// <param name="kph">The kilometers per hour value to convert.</param>
+        /// <returns></returns>
+        public static float ToMPH(float kph)
+        {
+            return kph / SingleMileToKM;
+        }
 
         /// <summary>
         /// 

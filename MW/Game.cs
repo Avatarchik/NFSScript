@@ -16,6 +16,13 @@ namespace NFSScript.MW
     /// </summary>
     public static class Game
     {
+        #region Constant Variables
+        private const int SOUND_ID = 0x1;
+        private const int AUDIO_STREAMING_ID = 0x2;
+        private const int SPEECH_ID = 0x3;
+        private const int NIS_AUDIO_ID = 0x4;
+        #endregion
+
         private static float sirensIntensityR = 1, sirensIntensityB = 1, sirensIntensityW = 1;
 
         /// <summary>
@@ -66,6 +73,42 @@ namespace NFSScript.MW
                     return true;
                 else return false;
             }
+        }
+
+        /// <summary>
+        /// Is sound enabled?
+        /// </summary>
+        public static bool isSoundEnabled
+        {
+            get { return _readAudioIDValue(SOUND_ID); }
+            set { _setAudioIDValue(SOUND_ID, value); }
+        }
+
+        /// <summary>
+        /// Is audio stream enabled?
+        /// </summary>
+        public static bool isAudioStreamingEnabled
+        {
+            get { return _readAudioIDValue(AUDIO_STREAMING_ID); }
+            set { _setAudioIDValue(AUDIO_STREAMING_ID, value); }
+        }
+
+        /// <summary>
+        /// Is speech enabled?
+        /// </summary>
+        public static bool isSpeechEnabled
+        {
+            get { return _readAudioIDValue(SPEECH_ID); }
+            set { _setAudioIDValue(SPEECH_ID, value); }
+        }
+
+        /// <summary>
+        /// Is NIS audio enabled?
+        /// </summary>
+        public static bool isNISAudioEnabled
+        {
+            get { return _readAudioIDValue(NIS_AUDIO_ID); }
+            set { _setAudioIDValue(NIS_AUDIO_ID, value); }
         }
 
         /// <summary>
@@ -160,6 +203,15 @@ namespace NFSScript.MW
         public static void RestartRace()
         {
             Function.Call(Funcs.RESTART_RACE);
+        }
+
+        /// <summary>
+        /// Starts a race.
+        /// </summary>
+        /// <param name="raceID">The race ID to start.</param>
+        public static void StartRace(string raceID)
+        {
+            Function.Call(Funcs.START_RACE, raceID);
         }
 
         /// <summary>
@@ -274,6 +326,65 @@ namespace NFSScript.MW
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_RED, r);
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_BLUE, b);
             memory.WriteFloat((IntPtr)Addrs.GameAddrs.STATIC_GLOBAL_COP_LIGHTS_WHITE, w);
+        }
+
+        internal static void _setAudioIDValue(int id, bool value)
+        {
+            byte b = 0;
+            if (value) b = 1;
+            IntPtr address = IntPtr.Zero;
+            switch (id)
+            {
+                case SOUND_ID:
+                    address = (IntPtr)Addrs.GenericAddrs.STATIC_IS_SOUND_ENABLED;
+                    break;
+
+                case AUDIO_STREAMING_ID:
+                    address = (IntPtr)Addrs.GenericAddrs.STATIC_IS_AUDIO_STREAMING_ENABLED;
+                    break;
+
+                case SPEECH_ID:
+                    address = (IntPtr)Addrs.GenericAddrs.STATIC_IS_SPEECH_ENABLED;
+                    break;
+
+                case NIS_AUDIO_ID:
+                    address = (IntPtr)Addrs.GenericAddrs.STATIC_IS_NIS_AUDIO_ENABLED;
+                    break;
+
+                default:
+                    return;
+            }
+
+            memory.WriteByte(address, b);
+        }
+
+        internal static bool _readAudioIDValue(int id)
+        {
+            byte b = 0;
+            switch (id)
+            {
+                case SOUND_ID:
+                    b = memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_IS_SOUND_ENABLED);
+                    break;
+
+                case AUDIO_STREAMING_ID:
+                    b = memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_IS_AUDIO_STREAMING_ENABLED);
+                    break;
+
+                case SPEECH_ID:
+                    b = memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_IS_SPEECH_ENABLED);
+                    break;
+
+                case NIS_AUDIO_ID:
+                    b = memory.ReadByte((IntPtr)Addrs.GenericAddrs.STATIC_IS_NIS_AUDIO_ENABLED);
+                    break;
+
+                default:
+                    b = 0;
+                    break;
+            }
+
+            return (b == 1);
         }
 
         /// <summary>

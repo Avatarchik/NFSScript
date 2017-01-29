@@ -11,6 +11,8 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Diagnostics;
 
+using static NFSScript.Core.NativeMethods;
+
 namespace NFSScript.Core
 {
     /// <summary>
@@ -174,6 +176,16 @@ namespace NFSScript.Core
         }
 
         /// <summary>
+        /// JMP command.
+        /// </summary>
+        /// <param name="value"></param>
+        public void Jmp(int value)
+        {
+            b.Add(0xE9);
+            b.AddRange(BitConverter.GetBytes(value));
+        }
+
+        /// <summary>
         /// Move a value to the EAX registry
         /// </summary>
         /// <param name="value"></param>
@@ -212,12 +224,30 @@ namespace NFSScript.Core
         public const int MAKE_NOP = 0x90;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public const int MAKE_JMP = 0xE9;
+
+        /// <summary>
         /// Writes a NOP instruction at a specified address.
         /// </summary>
         /// <param name="address"></param>
         public static void MakeNopAt(int address)
         {
             GameMemory.memory.WriteByte((IntPtr)address, 0x90);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="address"></param>
+        /// <param name="toAddress"></param>
+        public static void MakeJMPAt(int address, int toAddress)
+        {
+            List<byte> b = new List<byte>();
+            b.Add(0xE9);
+            b.AddRange(BitConverter.GetBytes(toAddress));
+            GameMemory.memory.WriteByteArray((IntPtr)address, b.ToArray());
         }
 
         /// <summary>
@@ -278,18 +308,6 @@ namespace NFSScript.Core
     internal static class _ASM
     {
         static Dictionary<IntPtr, byte[]> memoryPointersCache = new Dictionary<IntPtr, byte[]>();
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        internal static extern bool CloseHandle(IntPtr hObject); // Closes the specified handle.
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        internal static extern bool WriteProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, uint nSize, out UIntPtr lpNumberOfBytesWritten); // Used for shellcode injection.
-
-        [DllImport("kernel32.dll")]
-        internal static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress, uint dwSize, AllocationType flAllocationType, MemoryProtection flProtect); // Allocate memory.
-
-        [DllImport("kernel32.dll")]
-        internal static extern IntPtr CreateRemoteThread(IntPtr hProcess, IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, out uint lpThreadId); // Creates a remote thread.
 
 
         public const string ASM_ERROR = "ASMERROR";
@@ -398,6 +416,8 @@ namespace NFSScript.Core
             return result;
         }
     }
+
+    #region Enums
 
     /// <summary>
     /// 
@@ -777,4 +797,6 @@ namespace NFSScript.Core
         /// </summary>
         Unknown = 6
     }
+
+    #endregion
 }

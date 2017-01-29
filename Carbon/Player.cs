@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NFSScript.Core;
 using static NFSScript.Core.GameMemory;
 using Addrs = NFSScript.Core.CarbonAddresses;
@@ -15,8 +13,10 @@ namespace NFSScript.Carbon
     /// </summary>
     public static class Player
     {
+        #region Constant Variables
         private const uint POLICE_IGNORE_PLAYER_ENABLED = 3943023862U;
         private const uint POLICE_IGNORE_PLAYER_DISABLED = 2047198454U;
+        #endregion
 
         /// <summary>
         /// The <see cref="Player"/>'s position

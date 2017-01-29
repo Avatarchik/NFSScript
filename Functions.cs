@@ -5821,7 +5821,7 @@ namespace NFSScript
         /// <param name="o">The parameters to pass to the function.</param>
         public static void Call(int address, params object[] o)
         {
-            Call(address, true, o);            
+            Call(address, true, o);
         }
 
         /// <summary>
@@ -5855,11 +5855,8 @@ namespace NFSScript
                 else if (o[i] is bool)
                 {
                     bool b = (bool)o[i];
-                    byte val = 0;
 
-                    if (b) val = 1;
-
-                    function.Push(val);
+                    function.Push(b.ToByte());
                 }
                 else if (o[i] is string)
                 {
@@ -5873,7 +5870,7 @@ namespace NFSScript
                     }
                     else
                     {
-                        addr = _ASM.VirtualAllocEx(handle, IntPtr.Zero, (uint)s.Length + 4, AllocationType.Commit, MemoryProtection.ExecuteReadWrite);
+                        addr = NativeMethods.VirtualAllocEx(handle, IntPtr.Zero, (uint)s.Length + 4, AllocationType.Commit, MemoryProtection.ExecuteReadWrite);
 
                         if (addr == IntPtr.Zero)
                         {
@@ -5883,7 +5880,7 @@ namespace NFSScript
 
                         UIntPtr bytesWritten = UIntPtr.Zero;
 
-                        if (!_ASM.WriteProcessMemory(handle, addr, Encoding.ASCII.GetBytes(s), (uint)s.Length + 4, out bytesWritten))
+                        if (!NativeMethods.WriteProcessMemory(handle, addr, Encoding.ASCII.GetBytes(s), (uint)s.Length + 4, out bytesWritten))
                         {
                             Log.Print("ERROR", "Could not write process memory!");
                             return;
@@ -5902,8 +5899,7 @@ namespace NFSScript
                 }
                 else if (o[i] is Locval)
                 {
-                    Locval val = (Locval)o[i];
-                    int value = val.value;
+                    int value = (Locval)o[i];
                     function.PushWORDPTRDS(value);
 
                     //Log.Print("TEST", string.Format("Pushing the value of [0x{0}] to the stack", value.ToString("X")));
@@ -5939,7 +5935,7 @@ namespace NFSScript
                     function.PopEAX();
                 }
             }
-            // Return
+
             function.Return();
 
             ASM.CallAssembly(function.ToArray());

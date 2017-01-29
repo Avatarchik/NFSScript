@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NFSScript.Types;
+
 namespace NFSScript
 {
     /// <summary>
@@ -10,6 +11,11 @@ namespace NFSScript
     /// </summary>
     public class Any : CustomValueType<Any, byte[]>
     {
+        /// <summary>
+        /// The length of this variable.
+        /// </summary>
+        public int Length { get { return value.Length; } }
+
         private Any(byte[] value) : base(value)
         { }
 
@@ -21,6 +27,7 @@ namespace NFSScript
         {
             return new Any(value);
         }
+
         /// <summary>
         /// Gets the value.
         /// </summary>
@@ -146,7 +153,5 @@ namespace NFSScript
         {
             return Encoding.ASCII.GetBytes(value);
         }
-
-
     }
 }

@@ -11,13 +11,15 @@ namespace NFSScript
     public static class ExtensionMethods
     {
         /// <summary>
-        /// 
+        /// Converts a boolean to byte.
         /// </summary>
         /// <param name="x"></param>
         /// <returns></returns>
-        public static Locval ptr(this int x)
+        public static byte ToByte(this bool x)
         {
-            return new Locval(x);
+            if (x)
+                return 1;
+            else return 0;
         }
     }
 }

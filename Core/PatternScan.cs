@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 
+using static NFSScript.Core.NativeMethods;
+
 namespace NFSScript.Core
 {
     /// <summary>
@@ -11,27 +13,6 @@ namespace NFSScript.Core
     /// </summary>
     public static class PatternScan
     {
-        #region API Definitions
-        [DllImport("kernel32.dll")]
-        private static extern Boolean ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] buffer, uint size, int lpNumberOfBytesRead);
-        [DllImport("kernel32.dll")]
-        private static extern int VirtualQueryEx(IntPtr hProcess, IntPtr lpAddress, out MEMORY_BASIC_INFORMATION lpBuffer, int dwLength);
-
-        private const int MEM_COMMIT = 0x1000;
-        private const int PAGE_GUARD = 0x100;
-        [StructLayout(LayoutKind.Sequential)]
-        private struct MEMORY_BASIC_INFORMATION
-        {
-            public IntPtr BaseAddress;
-            public IntPtr AllocationBase;
-            public uint AllocationProtect;
-            public uint RegionSize;
-            public uint State;
-            public uint Protect;
-            public uint Type;
-        }
-        #endregion
-
         private static IntPtr match(byte[] mem, byte[] pattern)
         {
             // Setup filler array

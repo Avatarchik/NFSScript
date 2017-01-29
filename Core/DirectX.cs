@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace NFSScript
@@ -120,7 +118,7 @@ namespace NFSScript
         /// </summary>
         /// <param name="dKey"></param>
         /// <returns></returns>
-        public static Keys DirectXKeyToFormsKey(DirectXKeys dKey)
+        public static Keys DirectXKeyToKeys(DirectXKeys dKey)
         {
             Keys key;
             inputDictonary.TryGetValue(dKey, out key);
@@ -133,7 +131,7 @@ namespace NFSScript
         /// </summary>
         /// <param name="fKey"></param>
         /// <returns></returns>
-        public static DirectXKeys FormsKeyToDirectXKey(Keys fKey)
+        public static DirectXKeys KeysToDirectXKey(Keys fKey)
         {
             return inputDictonary.FirstOrDefault(x => x.Value == fKey).Key;
         }

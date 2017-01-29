@@ -16,6 +16,7 @@ namespace NFSScript.Carbon
     /// </summary>
     public static class Game
     {
+        #region Constant Variables
         private const int SOUND_ID = 0x1;
         private const int AUDIO_STREAMING_ID = 0x2;
         private const int SPEECH_ID = 0x3;
@@ -51,6 +52,7 @@ namespace NFSScript.Carbon
         /// The ID for DrawNISCar constructor pointer.
         /// </summary>
         public const int DRAW_NIS_CAR_POINTER_ID = 0x5;
+        #endregion
 
         private static float sirensIntensityR = 1, sirensIntensityB = 1, sirensIntensityW = 1;
 
@@ -402,7 +404,7 @@ namespace NFSScript.Carbon
         }
 
         /// <summary>
-        /// Start a race from in-game.
+        /// Starts a race from in-game.
         /// </summary>
         /// <param name="raceID">The race ID to start.</param>
         public static void StartRaceFromInGame(string raceID)

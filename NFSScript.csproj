@@ -48,19 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carbon\Database.cs" />
+    <Compile Include="Core\Audio.cs" />
+    <Compile Include="Core\NativeMethods.cs" />
     <Compile Include="Core\PatternScan.cs" />
     <Compile Include="Inheritables.cs" />
     <Compile Include="Interfaces.cs" />
+    <Compile Include="MW\Database.cs" />
     <Compile Include="MW\DynamicGameObject.cs" />
+    <Compile Include="ProStreet\Database.cs" />
     <Compile Include="Types\Any.cs" />
     <Compile Include="Types\BaseCamera.cs" />
     <Compile Include="Carbon\Camera.cs" />
-    <Compile Include="Carbon\Cars.cs" />
     <Compile Include="Carbon\DynamicGameObject.cs" />
     <Compile Include="Carbon\Game.cs" />
     <Compile Include="Carbon\Player.cs" />
     <Compile Include="Carbon\UI.cs" />
-    <Compile Include="Carbon\VinylCodes.cs" />
     <Compile Include="Core\DirectX.cs" />
     <Compile Include="Core\ExtensionMethods.cs" />
     <Compile Include="Core\INIReader.cs" />
@@ -90,21 +93,43 @@
     <Compile Include="ProStreet\Language.cs" />
     <Compile Include="ProStreet\Player.cs" />
     <Compile Include="ProStreet\UI.cs" />
+    <Compile Include="Undercover\Database.cs" />
     <Compile Include="Undercover\Game.cs" />
     <Compile Include="Undercover\Language.cs" />
     <Compile Include="Undercover\Player.cs" />
     <Compile Include="Undercover\SecretCodes.cs" />
     <Compile Include="Undercover\UI.cs" />
+    <Compile Include="Underground2\Database.cs" />
     <Compile Include="Underground2\Game.cs" />
     <Compile Include="Underground2\Player.cs" />
     <Compile Include="Underground2\UI.cs" />
+    <Compile Include="Underground\Database.cs" />
     <Compile Include="Underground\Game.cs" />
     <Compile Include="Underground\Input.cs" />
     <Compile Include="Underground\Network.cs" />
     <Compile Include="Underground\Player.cs" />
     <Compile Include="Underground\UI.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

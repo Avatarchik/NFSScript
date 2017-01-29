@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Maths = System.Math;
+﻿using Maths = System.Math;
 
 namespace NFSScript.Math
 {

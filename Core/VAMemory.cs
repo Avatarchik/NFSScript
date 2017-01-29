@@ -79,9 +79,6 @@ namespace NFSScript.Core
         [DllImport("kernel32.dll")]
         private static extern bool VirtualProtectEx(IntPtr hProcess, IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);
 
-        [DllImport("kernel32.dll", SetLastError = true)]
-        private static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
-
         /// <summary>
         /// 
         /// </summary>
